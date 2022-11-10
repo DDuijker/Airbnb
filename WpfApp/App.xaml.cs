@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace AirBnB
+namespace WpfApp
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="AirBnB" Height="450" Width="600">
+    <Grid Margin="10
+          ">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+         <TextBlock Grid.Column="0" TextWrapping="Wrap" Height="22" Width="137" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="16" FontWeight="Bold"><Run Text="Fill in your name"/><LineBreak/><Run/></TextBlock>
+        
+        <StackPanel Grid.Row="1">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Label Content="First name: "/>
+                <TextBox  x:Name="firstName" TextWrapping="Wrap" Width="120" TextChanged="Voornaam_TextChanged" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Last name: "/>
+                <TextBox  x:Name="lastName" TextWrapping="Wrap" Width="120" TextChanged="TextBox_TextChanged" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <Button x:Name="btnAdd" Click="ButtonAddName_Click" Content="Add Name" Width="84" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,20,0,0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Names:"/>
+            
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <ListBox
+                x:Name="listBox"
+                ItemsSource="{Binding firstName}"
+                SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                SelectionMode="Single"
+                />
+        </StackPanel>
     </Grid>
 </Window>

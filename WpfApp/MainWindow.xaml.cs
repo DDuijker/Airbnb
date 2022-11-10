@@ -24,5 +24,34 @@ namespace WpfApp
         {
             InitializeComponent();
         }
+
+        private void Voornaam_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ButtonAddName_Click(object sender, RoutedEventArgs e)
+        {
+            ///check that the textboxes aren't empty
+            ///check that the name doesn't already exist
+            if (!string.IsNullOrWhiteSpace(firstName.Text) && !string.IsNullOrWhiteSpace(lastName.Text)
+                && !listBox.Items.Contains(firstName.Text + " " + lastName.Text))
+            {
+                ///add the name to the listbox
+                listBox.Items.Add(firstName.Text + " " + lastName.Text);
+                ///clear textboxes
+                firstName.Text = "";
+                lastName.Text = "";
+
+            }
+            
+          
+
+        }
     }
 }
