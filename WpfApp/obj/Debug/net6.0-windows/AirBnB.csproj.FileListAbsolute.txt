@@ -19,3 +19,6 @@ C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\obj\Debug\net6.0-window
 C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\obj\Debug\net6.0-windows\AirBnB.pdb
 C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\obj\Debug\net6.0-windows\AirBnB.genruntimeconfig.cache
 C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\obj\Debug\net6.0-windows\ref\AirBnB.dll
+C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\obj\Debug\net6.0-windows\Views\LandlordView.g.cs
+C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\obj\Debug\net6.0-windows\Views\LandlordView.baml
+C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs

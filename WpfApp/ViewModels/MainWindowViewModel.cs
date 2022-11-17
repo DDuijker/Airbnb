@@ -11,10 +11,7 @@ namespace AirBnB.ViewModel
     public class MainWindowViewModel
     {
 
-        public void LandlordClick()
-        {
-            ///redirect to landlord view
-        }
+    
 
     }
 }

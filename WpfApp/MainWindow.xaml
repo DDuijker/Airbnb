@@ -3,23 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp"
+        xmlns:local="clr-namespace:WpfApp" 
+        xmlns:Views="clr-namespace:AirBnB.Views"
         mc:Ignorable="d"
-        Title="AirBnB" Height="450" Width="600">
+        Title="AirBnB" Height="450" Width="800">
     <Grid Margin="10
           ">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30px"/>
-            <RowDefinition Height="50px"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100px"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="100px"/>
-        </Grid.ColumnDefinitions>
-        <TextBox HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" FontWeight="Bold" FontSize="25">Welcome to AirBnB</TextBox>
-        <Button Grid.Column="1" Grid.Row="2" Height="30px" Width="120px" x:Name="LandlordButton" Click="LandlordClick">Place a reservation</Button>
+        
+
+        <StackPanel Orientation="Horizontal">
+            <TabControl Width="800">
+                <TabItem Header="Home">
+                    <TextBlock FontWeight="Bold" FontSize="25" HorizontalAlignment="Center">Welcome to AirBnB</TextBlock>
+                </TabItem>
+                <TabItem Header="Landlords">
+                 <!--Get the Landlord View -->
+                    <Views:LandlordView />    
+                </TabItem>
+            </TabControl>
+        </StackPanel>
     </Grid>
 </Window>

@@ -28,5 +28,15 @@ namespace AirBnB.Views
         {
 
         }
+
+        private void AddLandlord_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteLandlordButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
