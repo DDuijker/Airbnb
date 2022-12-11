@@ -10,12 +10,18 @@
     <Compile Update="Views\LandlordView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\PropertyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\LandlordView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PropertyView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

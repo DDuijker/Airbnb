@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\App.xaml
-2-247093179
+32089216873
 
-7602596820
+10855355807
 1991337721744
-MainWindow.xaml;Views\LandlordView.xaml;
+MainWindow.xaml;Views\LandlordView.xaml;Views\PropertyView.xaml;
 
 False
 

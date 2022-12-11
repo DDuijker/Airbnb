@@ -39,3 +39,5 @@ C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\bin\Debug\net6.0-window
 C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\bin\Debug\net6.0-windows\runtimes\win7-x64\native\libuv.dll
 C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\bin\Debug\net6.0-windows\runtimes\win7-x86\native\libuv.dll
 C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\obj\Debug\net6.0-windows\AirBnB.csproj.CopyComplete
+C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\obj\Debug\net6.0-windows\Views\PropertyView.g.cs
+C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\obj\Debug\net6.0-windows\Views\PropertyView.baml

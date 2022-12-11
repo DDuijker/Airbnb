@@ -5,8 +5,10 @@ namespace AirBnB.Model
     public class Landlord : INotifyPropertyChanged
 
     {
+        static int ID = 0;
 
         ///make variables for a landlord
+        private int _landlordID = ID;
         private string _firstName;
         private string _lastName;
         private string _email;
@@ -18,6 +20,7 @@ namespace AirBnB.Model
 
 
 
+        public int LandlordID { get { return _landlordID; } set { _landlordID = value; } }
         public string FirstName
         {
             get { return _firstName; }
@@ -79,6 +82,7 @@ namespace AirBnB.Model
                         string country
                         )
         {
+            ID++;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;

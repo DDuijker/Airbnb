@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AirBnB.Views" xmlns:model="clr-namespace:AirBnB.Model" d:DataContext="{d:DesignInstance Type=model:Landlord}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" Background="White">
     <UserControl.DataContext>
         <vms:LandlordViewModel/>
     </UserControl.DataContext>
@@ -22,7 +22,11 @@
         </Grid.RowDefinitions>
 
 
-        <TextBlock Text="Landlords" FontSize="30" FontWeight="Bold" Grid.Column="0" Grid.Row="0" TextAlignment="Center"/>
+        <StackPanel Grid.Column="0" Grid.Row="0">
+            <TextBlock Text="Landlords" FontSize="30" FontWeight="Bold" TextAlignment="Center"/>
+            <TextBlock Text="Id" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="20px"/>
+            <TextBox Text="{Binding SelectedLandlord.LandlordID, Mode=TwoWay}" Width="30px"/>
+        </StackPanel>
         <StackPanel Grid.Row="1" >
             <Button x:Name="AddLandlordButton" Command="{Binding AddLandlordCommand}" Content="Add Landlord"  Height="40px" Width="100px" Margin="0,0,0,10" />
             <Button x:Name="LinkLandlordButton" Command="{Binding LinkLandlordCommand}" Content="Link to property" Height="40px" Width="100px"  Margin="0,0,0,10"/>
@@ -59,7 +63,8 @@
 
         <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">
             <Label FontSize="20" FontWeight="Bold" >Properties:</Label>
-            <ListBox x:Name="PropertiesListBox"  Width="200px" Height="150px" />
+            <ListBox x:Name="PropertiesListBox" Width="200px" Height="150px" />
+
         </StackPanel>
 
         <!--- Make an option to connect landlords to properties -->

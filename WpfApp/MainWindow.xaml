@@ -9,7 +9,7 @@
         Title="AirBnB" Height="500" Width="800">
     <Grid Margin="10
           ">
-        
+
 
         <StackPanel Orientation="Horizontal">
             <TabControl Width="800">
@@ -17,8 +17,11 @@
                     <TextBlock FontWeight="Bold" FontSize="25" HorizontalAlignment="Center">Welcome to AirBnB</TextBlock>
                 </TabItem>
                 <TabItem Header="Landlords">
-                 <!--Get the Landlord View -->
-                    <Views:LandlordView />    
+                    <!--Get the Landlord View -->
+                    <Views:LandlordView />
+                </TabItem>
+                <TabItem Header="Properties">
+                    <Views:PropertyView />
                 </TabItem>
             </TabControl>
         </StackPanel>
