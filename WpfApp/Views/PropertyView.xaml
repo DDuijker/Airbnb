@@ -8,7 +8,7 @@
              xmlns:local="clr-namespace:AirBnB.Views" xmlns:models="clr-namespace:AirBnB.Models" d:DataContext="{d:DesignInstance Type=models:Property}"
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
     <UserControl.DataContext>
-        <vms:LandlordViewModel/>
+        <vms:PropertyViewModel/>
     </UserControl.DataContext>
     <Grid  Margin="10px, 10px, 10px, 10px">
         <Grid.ColumnDefinitions>

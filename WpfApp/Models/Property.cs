@@ -58,6 +58,7 @@ namespace AirBnB.Models
             this.Description = description;
             this.Type = type;
             this.Title = title;
+
         }
 
         private void Notify(string propertyName)
