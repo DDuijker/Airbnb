@@ -159,7 +159,7 @@ namespace AirBnB.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AirBnB;component/views/propertyview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AirBnB;V1.0.0.0;component/views/propertyview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\PropertyView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
