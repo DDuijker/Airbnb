@@ -4,8 +4,9 @@ namespace AirBnB.Models
 {
     public class Property : INotifyPropertyChanged
     {
-        //Make variables for a property
         static int ID = 0;
+
+        // Make variables for a property
         private static int _propertyID = ID;
         private string _address;
         private string _city;
@@ -58,6 +59,8 @@ namespace AirBnB.Models
             this.Description = description;
             this.Type = type;
             this.Title = title;
+
+            
 
         }
 

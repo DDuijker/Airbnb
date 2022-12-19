@@ -63,7 +63,7 @@
 
         <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">
             <Label FontSize="20" FontWeight="Bold" >Properties:</Label>
-            <ListBox x:Name="PropertiesListBox" Width="200px" Height="150px" />
+            <ListBox x:Name="PropertiesListBox" ItemsSource="{Binding AllProperties}" Width="200px" Height="150px" />
 
         </StackPanel>
 

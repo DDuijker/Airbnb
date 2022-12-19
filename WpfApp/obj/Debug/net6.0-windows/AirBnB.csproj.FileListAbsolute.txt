@@ -41,3 +41,46 @@ C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\bin\Debug\net6.0-window
 C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\obj\Debug\net6.0-windows\AirBnB.csproj.CopyComplete
 C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\obj\Debug\net6.0-windows\Views\PropertyView.g.cs
 C:\Users\Djoek\Documents\Windesheim jaar 2\CSharp\WpfApp\obj\Debug\net6.0-windows\Views\PropertyView.baml
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\AirBnB.exe
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\AirBnB.deps.json
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\AirBnB.runtimeconfig.json
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\AirBnB.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\AirBnB.pdb
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\CommonServiceLocator.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.Extras.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.Platform.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\GalaSoft.MvvmLight.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\System.Windows.Interactivity.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\runtimes\debian-x64\native\libuv.so
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\runtimes\fedora-x64\native\libuv.so
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\runtimes\opensuse-x64\native\libuv.so
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\runtimes\osx\native\libuv.dylib
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\runtimes\rhel-x64\native\libuv.so
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\runtimes\win7-arm\native\libuv.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\runtimes\win7-x64\native\libuv.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\bin\Debug\net6.0-windows\runtimes\win7-x86\native\libuv.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\AirBnB.csproj.AssemblyReference.cache
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\Views\LandlordView.g.cs
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\Views\PropertyView.g.cs
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\AirBnB_MarkupCompile.cache
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\AirBnB_MarkupCompile.lref
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\Views\LandlordView.baml
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\Views\PropertyView.baml
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\AirBnB.g.resources
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\AirBnB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\AirBnB.AssemblyInfoInputs.cache
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\AirBnB.AssemblyInfo.cs
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\AirBnB.csproj.CoreCompileInputs.cache
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\AirBnB.csproj.CopyComplete
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\AirBnB.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\refint\AirBnB.dll
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\AirBnB.pdb
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\AirBnB.genruntimeconfig.cache
+C:\Users\aaron\dev\Airbnb\WpfApp\obj\Debug\net6.0-windows\ref\AirBnB.dll

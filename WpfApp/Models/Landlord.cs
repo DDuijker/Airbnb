@@ -3,11 +3,10 @@
 namespace AirBnB.Model
 {
     public class Landlord : INotifyPropertyChanged
-
     {
         static int ID = 0;
 
-        ///make variables for a landlord
+        /// Make variables for a landlord
         private int _landlordID = ID;
         private string _firstName;
         private string _lastName;
