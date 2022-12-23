@@ -7044,11 +7044,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aaron\\dev\\Airbnb\\WpfApp\\AirBnB.csproj",
+      "projectUniqueName": "C:\\Users\\aaron\\dev\\school\\Airbnb\\WpfApp\\AirBnB.csproj",
       "projectName": "AirBnB",
-      "projectPath": "C:\\Users\\aaron\\dev\\Airbnb\\WpfApp\\AirBnB.csproj",
+      "projectPath": "C:\\Users\\aaron\\dev\\school\\Airbnb\\WpfApp\\AirBnB.csproj",
       "packagesPath": "C:\\Users\\aaron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aaron\\dev\\Airbnb\\WpfApp\\obj\\",
+      "outputPath": "C:\\Users\\aaron\\dev\\school\\Airbnb\\WpfApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\aaron\\AppData\\Roaming\\NuGet\\NuGet.Config",

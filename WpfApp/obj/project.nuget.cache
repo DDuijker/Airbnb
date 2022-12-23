@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wrnzoB+EAIiXGBrzGlBK3OtQ3kpWsoVcVIYxUsCbExDDmpm0lZFMjjLqXADDCoLOo+RlnPM6ySAoLmjW1ys77Q==",
+  "dgSpecHash": "BEl88a26Yql4uWpHb8mFgrcZ7QOb/ccbtPGEGsgDJNphyKqy+XI9Ey6OJaGAvxjt/0cIQPhhdOJChrjOdTKREA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aaron\\dev\\Airbnb\\WpfApp\\AirBnB.csproj",
+  "projectFilePath": "C:\\Users\\aaron\\dev\\school\\Airbnb\\WpfApp\\AirBnB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aaron\\.nuget\\packages\\commonservicelocator\\2.0.2\\commonservicelocator.2.0.2.nupkg.sha512",
     "C:\\Users\\aaron\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",

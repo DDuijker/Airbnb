@@ -18,22 +18,7 @@ namespace AirBnB.ViewModels
         ///Constructor
         public PropertyViewModel()
         {
-            Property = new Property(
-                "Alkmaarseweg 501",
-                "Beverwijk",
-                "The Netherlands",
-                "1945DM",
-                80.00,
-                4,
-                4,
-                1,
-                "Een mooi huisje in het centrum van Beverwijk",
-                "Huis",
-                "De Duijkertjes"
-                );
-
             AllProperties = new ObservableCollection<Property>();
-            AllProperties.Add(Property);
             AddPropertyCommand = new RelayCommand(AddProperty);
             DeletePropertyCommand = new RelayCommand(DeleteProperty);
         }

@@ -16,19 +16,7 @@ namespace AirBnB.ViewModels
         ///Constructor
         public LandlordViewModel()
         {
-            Landlord = new Landlord(
-
-                "John",
-                "Doe",
-                "JohnDoe@mail.com",
-                12345678,
-                "Street 1",
-                "City",
-                "1234",
-                "Country"
-                );
             AllLandlords = new ObservableCollection<Landlord>();
-            AllLandlords.Add(Landlord);
             AddLandlordCommand = new RelayCommand(AddLandlord);
             LinkLandlordCommand = new RelayCommand(LinkLandlord);
             DeleteLandlordCommand = new RelayCommand(DeleteLandlord);

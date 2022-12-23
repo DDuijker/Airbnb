@@ -29,7 +29,7 @@
 
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="10px">
             <TextBlock Text="Id" FontSize="20" FontWeight="Bold"  />
-            <TextBox Text="{Binding SelectedProperty.PropertyID, Mode=TwoWay}" HorizontalAlignment="Left" Width="30px"/>
+            <TextBox Text="{Binding SelectedProperty.PropertyID, Mode=OneWay}" HorizontalAlignment="Left" Width="30px"/>
             <TextBlock Text="Title" FontSize="20" FontWeight="Bold"/>
             <TextBox x:Name="PropertyTitle" Text="{Binding SelectedProperty.Title}"/>
             <TextBlock Text="Description" FontSize="20" FontWeight="Bold"/>

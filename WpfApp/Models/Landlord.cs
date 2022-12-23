@@ -7,7 +7,7 @@ namespace AirBnB.Model
         static int ID = 0;
 
         /// Make variables for a landlord
-        private int _landlordID = ID;
+        private static int _landlordID = ID;
         private string _firstName;
         private string _lastName;
         private string _email;
@@ -17,9 +17,12 @@ namespace AirBnB.Model
         private string _zipCode;
         private string _country;
 
-
-
-        public int LandlordID { get { return _landlordID; } set { _landlordID = value; } }
+        public int LandlordID { 
+            get { return _landlordID; } 
+            set { 
+                _landlordID = value;
+            } 
+        }
         public string FirstName
         {
             get { return _firstName; }
@@ -56,10 +59,34 @@ namespace AirBnB.Model
                 Notify("PhoneNumber");
             }
         }
-        public string Address { get { return _address; } set { _address = value; Notify("Adress"); } }
-        public string City { get { return _city; } set { _city = value; Notify("City"); } }
-        public string ZipCode { get { return _zipCode; } set { _zipCode = value; Notify("Zipcode"); } }
-        public string Country { get { return _country; } set { _country = value; Notify("Country"); } }
+        public string Address { 
+            get { return _address; } 
+            set { 
+                _address = value; 
+                Notify("Adress"); 
+            } 
+        }
+        public string City { 
+            get { return _city; } 
+            set { 
+                _city = value; 
+                Notify("City"); 
+            } 
+        }
+        public string ZipCode { 
+            get { return _zipCode; } 
+            set { 
+                _zipCode = value; 
+                Notify("Zipcode"); 
+            } 
+        }
+        public string Country { 
+            get { return _country; } 
+            set { 
+                _country = value; 
+                Notify("Country"); 
+            }
+        }
 
         public string FullName
         {
@@ -67,21 +94,21 @@ namespace AirBnB.Model
             {
                 return FirstName + " " + LastName;
             }
-
-
         }
 
-        public Landlord(string firstName,
-                        string lastName,
-                        string email,
-                        int phoneNumber,
-                        string address,
-                        string city,
-                        string zipCode,
-                        string country
-                        )
+        public Landlord(
+            string firstName,
+            string lastName,
+            string email,
+            int phoneNumber,
+            string address,
+            string city,
+            string zipCode,
+            string country
+        )
         {
             ID++;
+            this.LandlordID = ID;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;
