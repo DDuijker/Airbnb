@@ -1,13 +1,11 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace AirBnB.Models
 {
     public class Property : INotifyPropertyChanged
     {
-        static int ID = 0;
-
-        // Make variables for a property
-        private static int _propertyID = ID;
+        private int _propertyID;
         private string _address;
         private string _city;
         private string _zipCode;
@@ -19,8 +17,11 @@ namespace AirBnB.Models
         private string _description;
         private string _type;
         private string _title;
+        private int _landlordID = 0;
+        private Landlord _landlord;
 
-        public int PropertyID { 
+        [Key]
+        public int PropertyId { 
             get { return _propertyID; } 
             set { 
                 _propertyID = value; 
@@ -92,7 +93,8 @@ namespace AirBnB.Models
         public string Type { 
             get { return _type; } 
             set { 
-                _type = value; Notify("Type"); 
+                _type = value; 
+                Notify("Type"); 
             } 
         }
         public string Title { 
@@ -102,8 +104,24 @@ namespace AirBnB.Models
                 Notify("Title");
             } 
         }
+        public int LandlordId { 
+            get { return _landlordID; }
+            set
+            {
+                _landlordID = value;
+                Notify("LandlordID");
+            }
+        }
+        public Landlord Landlord
+        {
+            get { return _landlord; }
+            set
+            {
+                _landlord = value;
+                Notify("Landlord");
+            }
+        }
 
-        public int LandlordID { get; set; }
 
         public Property(
             string address,
@@ -119,8 +137,6 @@ namespace AirBnB.Models
             string title
         )
         {
-            ID++;
-            this.PropertyID = ID;
             this.Address = address;
             this.City = city;
             this.Country = country;

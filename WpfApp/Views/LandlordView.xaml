@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:vms="clr-namespace:AirBnB.ViewModels"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:AirBnB.Views" xmlns:model="clr-namespace:AirBnB.Model" d:DataContext="{d:DesignInstance Type=model:Landlord}"
+             xmlns:local="clr-namespace:AirBnB.Views" xmlns:model="clr-namespace:AirBnB.Models" d:DataContext="{d:DesignInstance Type=model:Landlord}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
     <UserControl.DataContext>
@@ -25,12 +25,13 @@
         <StackPanel Grid.Column="0" Grid.Row="0">
             <TextBlock Text="Landlords" FontSize="30" FontWeight="Bold" TextAlignment="Center"/>
             <TextBlock Text="Id" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="20px"/>
-            <TextBox Text="{Binding SelectedLandlord.LandlordID, Mode=OneWay}" Width="30px"/>
+            <TextBox Text="{Binding SelectedLandlord.LandlordId, Mode=OneWay}" Width="30px"/>
         </StackPanel>
         <StackPanel Grid.Row="1" >
             <Button x:Name="AddLandlordButton" Command="{Binding AddLandlordCommand}" Content="Add Landlord"  Height="40px" Width="100px" Margin="0,0,0,10" />
             <Button x:Name="LinkLandlordButton" Command="{Binding LinkLandlordCommand}" Content="Link to property" Height="40px" Width="100px"  Margin="0,0,0,10"/>
             <Button x:Name="DeleteLandlordButton" Command="{Binding DeleteLandlordCommand}" Content="Delete landlord" Height="40px" Width="100px" Margin="0,0,0,10"/>
+            <Button x:Name="SaveLandlordsButton" Command="{Binding SaveLandlordsCommand}" Content="Save Landlords" Height="40px" Width="100px"/>
         </StackPanel>
 
 
