@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfApp1.Windows.Landlords"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Windows" xmlns:vms="clr-namespace:WpfApp1.ViewModels"
+        mc:Ignorable="d"
+        Title="Landlords" Height="450" Width="370">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Landlords" VerticalAlignment="Top" Height="36" Width="130" FontSize="30"/>
+        <ListBox Grid.Column="0" x:Name="LandlordsListBox" SelectedItem="{Binding SelectedLandlord}" ItemsSource="{Binding AllLandlords}" DisplayMemberPath="FullName" VerticalAlignment="Top" Margin="0,40,0,0" Width="130" Height="270"/>
+        <Button Grid.Column="0" x:Name="DeleteLandlordButton" Command="{Binding DeleteLandlordCommand}" Content="Delete Landlord" VerticalAlignment="Top" Margin="0,320,0,0" Width="130" Height="30" />
+        <Button Grid.Column="0" x:Name="CreateLandlordButton" Command="{Binding CreateLandlordCommand}" Content="Create Landlord" VerticalAlignment="Top" Margin="0,360,0,0" Width="130" Height="30" />
+
+        <Label Grid.Column="1" Content="First name" VerticalAlignment="Top" Margin="0,25,0,0"/>
+        <TextBox Grid.Column="1" x:Name="LandlordFirstName" Text="{Binding SelectedLandlord.FirstName, Mode=OneWay}" VerticalAlignment="Top" Margin="0,45,05,0" IsReadOnly="True"/>
+        <Label Grid.Column="1" Content="Last name" VerticalAlignment="Top" Margin="0,60,0,0"/>
+        <TextBox Grid.Column="1" x:Name="LandlordLastName" Text="{Binding SelectedLandlord.LastName, Mode=OneWay}" VerticalAlignment="Top" Margin="0,80,05,0" IsReadOnly="True"/>
+        <Label Grid.Column="1" Content="Email" VerticalAlignment="Top" Margin="0,95,0,0"/>
+        <TextBox Grid.Column="1" x:Name="LandlordEmail" Text="{Binding SelectedLandlord.Email, Mode=OneWay}" VerticalAlignment="Top" Margin="0,115,05,0" IsReadOnly="True"/>
+        <Label Grid.Column="1" Content="Phone number" VerticalAlignment="Top" Margin="0,130,0,0"/>
+        <TextBox Grid.Column="1" x:Name="LandlordPhoneNumber" Text="{Binding SelectedLandlord.PhoneNumber, Mode=OneWay}" VerticalAlignment="Top" Margin="0,150,05,0" IsReadOnly="True"/>
+        <Label Grid.Column="1" Content="Address" VerticalAlignment="Top" Margin="0,165,0,0"/>
+        <TextBox Grid.Column="1" x:Name="LandlordAddress" Text="{Binding SelectedLandlord.Address, Mode=OneWay}" VerticalAlignment="Top" Margin="0,185,05,0" IsReadOnly="True"/>
+        <Label Grid.Column="1" Content="City" VerticalAlignment="Top" Margin="0,200,0,0"/>
+        <TextBox Grid.Column="1" x:Name="LandlordCity" Text="{Binding SelectedLandlord.City, Mode=OneWay}" VerticalAlignment="Top" Margin="0,220,05,0" IsReadOnly="True"/>
+        <Label Grid.Column="1" Content="Zip code" VerticalAlignment="Top" Margin="0,235,0,0"/>
+        <TextBox Grid.Column="1" x:Name="LandlordZip" Text="{Binding SelectedLandlord.Zip, Mode=OneWay}" VerticalAlignment="Top" Margin="0,255,05,0" IsReadOnly="True"/>
+        <Label Grid.Column="1" Content="Country" VerticalAlignment="Top" Margin="0,270,0,0"/>
+        <TextBox Grid.Column="1" x:Name="LandlordCountry" Text="{Binding SelectedLandlord.Country, Mode=OneWay}" VerticalAlignment="Top" Margin="0,290,05,0" IsReadOnly="True"/>
+
+        <Button Grid.Column="1" x:Name="CreatePropertyButton" Command="{Binding CreatePropertyCommand}" Content="Create Property" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,320,0,0" Width="130" Height="30" />
+        <Button Grid.Column="1" x:Name="EditLandlordButton" Command="{Binding EditLandlordCommand}" Content="Edit Landlord" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,360,0,0" Width="130" Height="30" />
+
+    </Grid>
+</Window>

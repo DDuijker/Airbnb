@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="WpfApp1.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.Views" xmlns:vms="clr-namespace:WpfApp1.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+    <UserControl.DataContext>
+        <vms:HomeViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <TextBlock FontWeight="Bold" FontSize="25" HorizontalAlignment="Center">Welcome to AirBnB</TextBlock>
+        <Button Grid.Column="0" Grid.Row="0" x:Name="ShowLandlordsButton" Command="{Binding ShowLandlordsCommand}" Content="Landlords" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" Width="130" Height="50" />
+        <Button Grid.Column="1" Grid.Row="0" x:Name="ShowPropertiesButton" Command="{Binding ShowPropertiesCommand}" Content="Properties" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="5,0,0,5" Width="130" Height="50" />
+    </Grid>
+</UserControl>
