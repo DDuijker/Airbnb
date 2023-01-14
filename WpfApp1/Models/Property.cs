@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 namespace WpfApp1.Models
 {
@@ -22,6 +18,7 @@ namespace WpfApp1.Models
         private string _type;
         private string _title;
         private Landlord? _landlord;
+        private ObservableCollection<Reservation> _reservations;
 
         public int Id
         {
@@ -101,6 +98,12 @@ namespace WpfApp1.Models
             set { _landlord = value; }
         }
 
+        public ObservableCollection<Reservation> Reservations
+        {
+            get { return _reservations; }
+            set { _reservations = value; }
+        }
+
 
         public Property(
             string address = "---", 
@@ -126,6 +129,7 @@ namespace WpfApp1.Models
             this.Description = description;
             this.Type = type;
             this.Title = title;
+            this.Reservations = new();
         }
     }
 }

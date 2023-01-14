@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 namespace WpfApp1.Models
 {
@@ -31,75 +25,49 @@ namespace WpfApp1.Models
         public string FirstName
         {
             get { return _firstName; }
-            set { 
-                _firstName = value;
-                Notify("FirstName");
-                Notify("FullName");
-            }
+            set { _firstName = value; }
         }
 
         public string LastName
         {
             get { return _lastName; }
-            set { 
-                _lastName = value;
-                Notify("LastName");
-                Notify("FullName");
-            }
+            set { _lastName = value; }
         }
 
         public string Email
         {
             get { return _email; }
-            set { 
-                _email = value;
-                Notify("Email");
-            }
+            set { _email = value; }
         }
 
         public string PhoneNumber
         {
             get { return _phoneNumber; }
-            set { 
-                _phoneNumber = value;
-                Notify("PhoneNumber");
-            }
+            set { _phoneNumber = value; }
         }
 
         public string Address
         {
             get { return _address; }
-            set { 
-                _address = value;
-                Notify("Address");
-            }
+            set { _address = value; }
         }
 
         public string City
         {
             get { return _city; }
-            set { 
-                _city = value;
-                Notify("City");
-            }
+            set { _city = value; }
         }
 
         public string Zip
         {
             get { return _zip; }
-            set { 
-                _zip = value;
-                Notify("Zip");
-            }
+            set { _zip = value; }
         }
 
         public string Country
         {
             get { return _country; }
-            set { 
-                _country = value;
-                Notify("Country");
-            }
+            set { _country = value; }
         }
 
         public string FullName
@@ -137,12 +105,5 @@ namespace WpfApp1.Models
             this.Country = country;
             this.Properties = new();
         }
-
-        private void Notify(string property)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }
