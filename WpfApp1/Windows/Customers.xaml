@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.Windows" xmlns:vms="clr-namespace:WpfApp1.ViewModels"
         mc:Ignorable="d"
-        Title="Customers" Height="450" Width="370">
+        Title="Customers" Height="450" Width="520">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -29,7 +30,12 @@
         <Label Grid.Column="1" Content="Phone number" VerticalAlignment="Top" Margin="0,130,0,0"/>
         <TextBox Grid.Column="1" x:Name="CustomerPhoneNumber" Text="{Binding SelectedCustomer.PhoneNumber, Mode=OneWay}" VerticalAlignment="Top" Margin="0,150,05,0" IsReadOnly="True"/>
 
-        <Button Grid.Column="1" x:Name="CreateReservationButton" Command="{Binding CreateReservationCommand}" Content="Create Reservation" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,320,0,0" Width="130" Height="30" />
-        <Button Grid.Column="1" x:Name="EditCustomerButton" Command="{Binding EditCustomerCommand}" Content="Edit Customer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,360,0,0" Width="130" Height="30" />
+        <Button Grid.Column="1" x:Name="CreateReservationButton" Command="{Binding CreateReservationCommand}" Content="Create Reservation" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,320,0,0" Width="130" Height="30" />
+        <Button Grid.Column="1" x:Name="EditCustomerButton" Command="{Binding EditCustomerCommand}" Content="Edit Customer" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,360,0,0" Width="130" Height="30" />
+
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Reservations" VerticalAlignment="Top" Height="26" Width="130" FontSize="20"/>
+        <ListBox Grid.Column="2" x:Name="ReservationsListBox" SelectedItem="{Binding SelectedReservation}" ItemsSource="{Binding CustomerReservations}" DisplayMemberPath="DateString" VerticalAlignment="Top" Margin="0,40,0,0" Width="130" Height="270"/>
+
+        <Button Grid.Column="2" x:Name="DeleteReservationButton" Command="{Binding DeleteReservationCommand}" Content="Delete Reservation" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,320,0,0" Width="130" Height="30" />
     </Grid>
 </Window>

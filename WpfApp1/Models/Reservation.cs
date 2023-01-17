@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,6 +54,7 @@ namespace WpfApp1.Models
             {
                 _amountOfDays = value;
                 Notify("AmountOfDays");
+                Notify("EpochLeave");
             }
         }
 
@@ -63,6 +65,8 @@ namespace WpfApp1.Models
             {
                 _epochArrival = value;
                 Notify("EpochArrival");
+                Notify("DateString");
+                Notify("EpochLeave");
             }
         }
 
@@ -73,6 +77,24 @@ namespace WpfApp1.Models
             {
                 _status = value;
                 Notify("Status");
+            }
+        }
+
+        public string DateString
+        {
+            get
+            {
+                DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(EpochArrival);
+                DateTime PickedDate = dateTimeOffset.DateTime;
+                return PickedDate.ToString("yyyy-MM-dd");
+            }
+        }
+
+        public int EpochLeave
+        {
+            get
+            {
+                return EpochArrival + AmountOfDays * 86400;
             }
         }
 

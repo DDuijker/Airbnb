@@ -9,19 +9,38 @@ using System.Text;
 using System.Threading.Tasks;
 using WpfApp1.Models;
 using WpfApp1.Windows;
+using System.ComponentModel;
 
 namespace WpfApp1.ViewModels
 {
-    class CustomersViewModel
+    class CustomersViewModel : INotifyPropertyChanged
     {
-        public Customer SelectedCustomer { get; set; }
+        private Customer _selectedCustomer;
+        public Customer SelectedCustomer {
+            get
+            {
+                return _selectedCustomer;
+            }
+            set
+            {
+                _selectedCustomer = value;
+                Notify("SelectedCustomer");
+
+                var _customerReservation = Db.Reservations.Where(reservation => reservation.Customer.Id == value.Id);
+                CustomerReservations = ToObservableCollection(_customerReservation);
+                Notify("CustomerReservations");
+            }
+        }
+        public Reservation SelectedReservation { get; set; }
         public virtual ObservableCollection<Customer> AllCustomers { get; set; }
+        public ObservableCollection<Reservation> CustomerReservations { get; set; }
         private AirBnbContext Db { get; set; }
 
         public ICommand CreateCustomerCommand { get; set; }
         public ICommand DeleteCustomerCommand { get; set; }
         public ICommand EditCustomerCommand { get; set; }
         public ICommand CreateReservationCommand { get; set; }
+        public ICommand DeleteReservationCommand { get; set; }
 
 
         public CustomersViewModel()
@@ -30,6 +49,7 @@ namespace WpfApp1.ViewModels
             DeleteCustomerCommand = new RelayCommand(DeleteCustomer);
             EditCustomerCommand = new RelayCommand(EditCustomer);
             CreateReservationCommand = new RelayCommand(CreateReservation);
+            DeleteReservationCommand = new RelayCommand(DeleteReservation);
 
             Db = new();
             Db.Customers.Load();
@@ -53,6 +73,17 @@ namespace WpfApp1.ViewModels
 
             AllCustomers.Remove(SelectedCustomer);
             Db.SaveChanges();
+        }
+
+        public void DeleteReservation()
+        {
+            if (SelectedReservation == null) return;
+            if (SelectedReservation.Customer.Id != SelectedCustomer.Id) return;
+
+            Db.Reservations.Remove(SelectedReservation);
+            Db.SaveChanges();
+
+            CustomerReservations.Remove(SelectedReservation);
         }
 
         public void EditCustomer()
@@ -79,6 +110,17 @@ namespace WpfApp1.ViewModels
             EventHandler handler = this.RequestClose;
             if (handler != null)
                 handler(this, EventArgs.Empty);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void Notify(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public ObservableCollection<T> ToObservableCollection<T>(IEnumerable<T> enumeration)
+        {
+            return new ObservableCollection<T>(enumeration);
         }
     }
 }
