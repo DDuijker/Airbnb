@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using CommunityToolkit.Mvvm.Input;
+using System.Windows.Input;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,12 +18,12 @@ namespace WpfApp1.ViewModels
         public virtual ObservableCollection<Landlord> AllLandlords { get; set; }
         private AirBnbContext Db { get; set; }
 
-        public RelayCommand SavePropertyCommand { get; set; }
+        public ICommand SavePropertyCommand { get; set; }
 
 
         public EditPropertyViewModel(Property _property)
         {
-            SavePropertyCommand = new(SaveProperty);
+            SavePropertyCommand = new RelayCommand(SaveProperty);
 
             SelectedProperty = _property;
             SelectedLandlord = _property.Landlord;

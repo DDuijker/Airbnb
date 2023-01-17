@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApp1.Windows.EditCustomer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Windows"
+        mc:Ignorable="d"
+        Title="Edit Customer" Height="280" Width="220">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Content="First name" VerticalAlignment="Top" Margin="05,5,0,0"/>
+        <TextBox Grid.Column="1" x:Name="CustomerFirstName" Text="{Binding Customer.FirstName}" VerticalAlignment="Top" Margin="05,25,05,0"/>
+        <Label Grid.Column="1" Content="Last name" VerticalAlignment="Top" Margin="05,40,0,0"/>
+        <TextBox Grid.Column="1" x:Name="CustomerLastName" Text="{Binding Customer.LastName}" VerticalAlignment="Top" Margin="05,60,05,0"/>
+        <Label Grid.Column="1" Content="Email" VerticalAlignment="Top" Margin="05,75,0,0"/>
+        <TextBox Grid.Column="1" x:Name="CustomerEmail" Text="{Binding Customer.Email}" VerticalAlignment="Top" Margin="05,95,05,0"/>
+        <Label Grid.Column="1" Content="Phone number" VerticalAlignment="Top" Margin="05,110,0,0"/>
+        <TextBox Grid.Column="1" x:Name="CustomerPhoneNumber" Text="{Binding Customer.PhoneNumber}" VerticalAlignment="Top" Margin="05,130,05,0"/>
+
+        <Button Grid.Column="0" x:Name="SaveLandlordButton" Command="{Binding SaveCommand}" Content="Save Customer" VerticalAlignment="Top" Margin="05,160,05,0" Height="30" />
+        <Button Grid.Column="0" x:Name="CancelButton" Command="{Binding CancelCommand}" Content="Cancel" VerticalAlignment="Top" Margin="05,200,05,0" Height="30" />
+    </Grid>
+</Window>

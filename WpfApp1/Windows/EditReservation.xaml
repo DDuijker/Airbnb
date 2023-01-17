@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp1.Windows.EditReservation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Windows"
+        mc:Ignorable="d"
+        Title="EditReservation" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Content="Property" VerticalAlignment="Top" Margin="5,25,5,0"/>
+        <TextBox Grid.Column="0" x:Name="PropertyAddress" Text="{Binding Reservation.Property.Address, Mode=OneWay}" VerticalAlignment="Top" Margin="5,45,5,0" IsReadOnly="True"/>
+        <ListBox Grid.Column="0" x:Name="PropertiesListBox" SelectedItem="{Binding Reservation.Property}" ItemsSource="{Binding AllProperties}" DisplayMemberPath="Address" VerticalAlignment="Top" Margin="5,65,5,0" Height="270"/>
+
+        <Label Grid.Column="1" Content="Customer" VerticalAlignment="Top" Margin="5,25,5,0"/>
+        <TextBox Grid.Column="1" x:Name="CustomerFullName" Text="{Binding Reservation.Customer.FullName, Mode=OneWay}" VerticalAlignment="Top" Margin="5,45,5,0" IsReadOnly="True"/>
+        <ListBox Grid.Column="1" x:Name="CustomersListBox" SelectedItem="{Binding Reservation.Customer}" ItemsSource="{Binding AllCustomers}" DisplayMemberPath="FullName" VerticalAlignment="Top" Margin="5,65,5,0" Height="270"/>
+        <Button Grid.Column="1" x:Name="SavePropertyButton" Command="{Binding SaveCommand}" Content="Save" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,360,0,0" Width="200" Height="30" />
+        
+        <Label Grid.Column="2" Content="Arrival Date" VerticalAlignment="Top" Margin="5,25,5,0"/>
+        <DatePicker Grid.Column="2" x:Name="ArrivalDate" Margin="5,45,5,0" SelectedDate="{Binding PickedDate}" Height="25" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

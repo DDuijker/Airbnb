@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using CommunityToolkit.Mvvm.Input;
+using System.Windows.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,15 +16,15 @@ namespace WpfApp1.ViewModels
 
         private AirBnbContext Db { get; set; }
 
-        public RelayCommand SavePropertyCommand { get; set; }
-        public RelayCommand CancelPropertyCommand { get; set; }
+        public ICommand SavePropertyCommand { get; set; }
+        public ICommand CancelPropertyCommand { get; set; }
 
         public AddPropertyViewModel(Landlord _landlord)
         {
             Db = new();
 
-            SavePropertyCommand = new(SaveProperty);
-            CancelPropertyCommand = new(CancelPropery);
+            SavePropertyCommand = new RelayCommand(SaveProperty);
+            CancelPropertyCommand = new RelayCommand(CancelPropery);
 
             SelectedLandlord = _landlord;
             NewProperty = new("","","","",0,0,0,0,"","","");

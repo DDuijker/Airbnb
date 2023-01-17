@@ -9,30 +9,30 @@ using WpfApp1.Models;
 
 namespace WpfApp1.ViewModels
 {
-    class EditLandlordViewModel
+    class EditCustomerViewModel
     {
-        public Landlord Landlord { get; set; }
+        public Customer Customer { get; set; }
         private AirBnbContext Db { get; set; }
 
-        public ICommand SaveLandlordCommand { get; set; }
+        public ICommand SaveCommand { get; set; }
         public ICommand CancelCommand { get; set; }
 
-        public EditLandlordViewModel(Landlord _landlord)
+        public EditCustomerViewModel(Customer _customer)
         {
-            SaveLandlordCommand = new RelayCommand(SaveLandlord);
+            SaveCommand = new RelayCommand(Save);
             CancelCommand = new RelayCommand(Cancel);
 
-            Landlord = _landlord;
+            Customer = _customer;
             Db = new();
 
-            Landlord? lord = Db.Landlords.Where(_lord => _lord.Id == _landlord.Id).FirstOrDefault();
-            if (lord != null)
+            Customer? customer = Db.Customers.Where(customer => customer.Id == _customer.Id).FirstOrDefault();
+            if (customer != null)
             {
-                Landlord = lord;
+                Customer = customer;
             }
         }
 
-        public void SaveLandlord()
+        public void Save()
         {
             Db.SaveChanges();
             OnRequestClose();

@@ -1,8 +1,9 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace WpfApp1.Models
 {
-    public class Landlord
+    public class Landlord : INotifyPropertyChanged
     {
 
         private int _id;
@@ -19,55 +20,93 @@ namespace WpfApp1.Models
         public int Id
         {
             get { return _id; }
-            set { _id = value; }
+            set 
+            { 
+                _id = value;
+                Notify("Id");
+            }
         }
 
         public string FirstName
         {
             get { return _firstName; }
-            set { _firstName = value; }
+            set
+            {
+                _firstName = value;
+                Notify("FirstName");
+                Notify("FullName");
+            }
         }
 
         public string LastName
         {
             get { return _lastName; }
-            set { _lastName = value; }
+            set
+            {
+                _lastName = value;
+                Notify("LastName");
+                Notify("FullName");
+            }
         }
 
         public string Email
         {
             get { return _email; }
-            set { _email = value; }
+            set
+            {
+                _email = value;
+                Notify("Email");
+            }
         }
 
         public string PhoneNumber
         {
             get { return _phoneNumber; }
-            set { _phoneNumber = value; }
+            set
+            {
+                _phoneNumber = value;
+                Notify("PhoneNumber");
+            }
         }
 
         public string Address
         {
             get { return _address; }
-            set { _address = value; }
+            set
+            {
+                _address = value;
+                Notify("Address");
+            }
         }
 
         public string City
         {
             get { return _city; }
-            set { _city = value; }
+            set
+            {
+                _city = value;
+                Notify("City");
+            }
         }
 
         public string Zip
         {
             get { return _zip; }
-            set { _zip = value; }
+            set
+            {
+                _zip = value;
+                Notify("Zip");
+            }
         }
 
         public string Country
         {
             get { return _country; }
-            set { _country = value; }
+            set
+            {
+                _country = value;
+                Notify("Country");
+            }
         }
 
         public string FullName
@@ -81,7 +120,11 @@ namespace WpfApp1.Models
         public ObservableCollection<Property> Properties 
         { 
             get { return _properties; }
-            set { _properties = value; } 
+            set
+            {
+                _properties = value;
+                Notify("Properties");
+            } 
         }
 
 
@@ -104,6 +147,13 @@ namespace WpfApp1.Models
             this.Zip = zip;
             this.Country = country;
             this.Properties = new();
+        }
+
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public void Notify(string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
     }
 }

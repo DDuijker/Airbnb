@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp1.Windows.Customers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Windows" xmlns:vms="clr-namespace:WpfApp1.ViewModels"
+        mc:Ignorable="d"
+        Title="Customers" Height="450" Width="370">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Customers" VerticalAlignment="Top" Height="36" Width="130" FontSize="30"/>
+        <ListBox Grid.Column="0" x:Name="LandlordsListBox" SelectedItem="{Binding SelectedCustomer}" ItemsSource="{Binding AllCustomers}" DisplayMemberPath="FullName" VerticalAlignment="Top" Margin="0,40,0,0" Width="130" Height="270"/>
+        <Button Grid.Column="0" x:Name="DeleteCustomerButton" Command="{Binding DeleteCustomerCommand}" Content="Delete Customer" VerticalAlignment="Top" Margin="0,320,0,0" Width="130" Height="30" />
+        <Button Grid.Column="0" x:Name="CreateCustomerButton" Command="{Binding CreateCustomerCommand}" Content="Create Customer" VerticalAlignment="Top" Margin="0,360,0,0" Width="130" Height="30" />
+
+        <Label Grid.Column="1" Content="First name" VerticalAlignment="Top" Margin="0,25,0,0"/>
+        <TextBox Grid.Column="1" x:Name="CustomerFirstName" Text="{Binding SelectedCustomer.FirstName, Mode=OneWay}" VerticalAlignment="Top" Margin="0,45,05,0" IsReadOnly="True"/>
+        <Label Grid.Column="1" Content="Last name" VerticalAlignment="Top" Margin="0,60,0,0"/>
+        <TextBox Grid.Column="1" x:Name="CustomerLastName" Text="{Binding SelectedCustomer.LastName, Mode=OneWay}" VerticalAlignment="Top" Margin="0,80,05,0" IsReadOnly="True"/>
+        <Label Grid.Column="1" Content="Email" VerticalAlignment="Top" Margin="0,95,0,0"/>
+        <TextBox Grid.Column="1" x:Name="CustomerEmail" Text="{Binding SelectedCustomer.Email, Mode=OneWay}" VerticalAlignment="Top" Margin="0,115,05,0" IsReadOnly="True"/>
+        <Label Grid.Column="1" Content="Phone number" VerticalAlignment="Top" Margin="0,130,0,0"/>
+        <TextBox Grid.Column="1" x:Name="CustomerPhoneNumber" Text="{Binding SelectedCustomer.PhoneNumber, Mode=OneWay}" VerticalAlignment="Top" Margin="0,150,05,0" IsReadOnly="True"/>
+
+        <Button Grid.Column="1" x:Name="CreateReservationButton" Command="{Binding CreateReservationCommand}" Content="Create Reservation" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,320,0,0" Width="130" Height="30" />
+        <Button Grid.Column="1" x:Name="EditCustomerButton" Command="{Binding EditCustomerCommand}" Content="Edit Customer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,360,0,0" Width="130" Height="30" />
+    </Grid>
+</Window>

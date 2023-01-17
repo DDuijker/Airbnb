@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using CommunityToolkit.Mvvm.Input;
+using System.Windows.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,15 @@ namespace WpfApp1.ViewModels
 {
     class HomeViewModel
     {
-        public RelayCommand ShowLandlordsCommand { get; set; }
-        public RelayCommand ShowPropertiesCommand { get; set; }
+        public ICommand ShowLandlordsCommand { get; set; }
+        public ICommand ShowPropertiesCommand { get; set; }
+        public ICommand ShowCustomersCommand { get; set; }
 
         public HomeViewModel()
         {
-            ShowLandlordsCommand = new(ShowLandlords);
-            ShowPropertiesCommand = new(ShowProperties);
+            ShowLandlordsCommand = new RelayCommand(ShowLandlords);
+            ShowPropertiesCommand = new RelayCommand(ShowProperties);
+            ShowCustomersCommand = new RelayCommand(ShowCustomers);
         }
 
         public void ShowLandlords()
@@ -28,6 +31,12 @@ namespace WpfApp1.ViewModels
         public void ShowProperties()
         {
             Properties newWindow = new();
+            newWindow.Show();
+        }
+
+        public void ShowCustomers()
+        {
+            Customers newWindow = new();
             newWindow.Show();
         }
     }

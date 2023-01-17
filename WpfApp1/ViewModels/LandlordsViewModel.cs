@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using CommunityToolkit.Mvvm.Input;
+using System.Windows.Input;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,17 +18,17 @@ namespace WpfApp1.ViewModels
         public virtual ObservableCollection<Landlord> AllLandlords { get; set; }
         private AirBnbContext Db { get; set; }
 
-        public RelayCommand CreateLandlordCommand { get; set; }
-        public RelayCommand DeleteLandlordCommand { get; set; }
-        public RelayCommand CreatePropertyCommand { get; set; }
-        public RelayCommand EditLandlordCommand { get; set; }
+        public ICommand CreateLandlordCommand { get; set; }
+        public ICommand DeleteLandlordCommand { get; set; }
+        public ICommand CreatePropertyCommand { get; set; }
+        public ICommand EditLandlordCommand { get; set; }
 
         public LandlordsViewModel()
         {
-            CreateLandlordCommand = new(CreateLandlord);
-            DeleteLandlordCommand = new(DeleteLandlord);
-            CreatePropertyCommand = new(CreateProperty);
-            EditLandlordCommand = new(EditLandlord);
+            CreateLandlordCommand = new RelayCommand(CreateLandlord);
+            DeleteLandlordCommand = new RelayCommand(DeleteLandlord);
+            CreatePropertyCommand = new RelayCommand(CreateProperty);
+            EditLandlordCommand = new RelayCommand(EditLandlord);
 
             Db = new();
 
@@ -48,6 +49,7 @@ namespace WpfApp1.ViewModels
 
         public void DeleteLandlord()
         {
+            if (SelectedLandlord == null) return;
             AllLandlords.Remove(SelectedLandlord);
             Db.SaveChanges();
         }
