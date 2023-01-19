@@ -39,9 +39,8 @@ namespace WpfApp1.ViewModels
             AllProperties.Add(newProperty);
             Db.SaveChanges();
 
-            EditProperty newWindow = new(newProperty);
+            EditProperty newWindow = new(newProperty, Db);
             newWindow.Show();
-            OnRequestClose();
         }
 
         public void DeleteProperty()
@@ -52,9 +51,8 @@ namespace WpfApp1.ViewModels
 
         public void EditProperty()
         {
-            EditProperty newWindow = new(SelectedProperty);
+            EditProperty newWindow = new(SelectedProperty, Db);
             newWindow.Show();
-            OnRequestClose();
         }
 
         public event EventHandler RequestClose;

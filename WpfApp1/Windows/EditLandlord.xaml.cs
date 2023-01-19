@@ -21,11 +21,11 @@ namespace WpfApp1.Windows
     /// </summary>
     public partial class EditLandlord : Window
     {
-        public EditLandlord(Landlord landlord)
+        public EditLandlord(Landlord landlord, AirBnbContext? _db = null)
         {
             InitializeComponent();
 
-            EditLandlordViewModel Vm = new(landlord);
+            EditLandlordViewModel Vm = new(landlord, _db);
             Vm.RequestClose += (s, e) => this.Close();
 
             DataContext = Vm;

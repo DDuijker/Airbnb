@@ -21,24 +21,29 @@ namespace WpfApp1.ViewModels
         public ICommand SavePropertyCommand { get; set; }
 
 
-        public EditPropertyViewModel(Property _property)
+        public EditPropertyViewModel(Property _property, AirBnbContext? _db = null)
         {
             SavePropertyCommand = new RelayCommand(SaveProperty);
 
             SelectedProperty = _property;
             SelectedLandlord = _property.Landlord;
 
-            Db = new();
+            if (_db != null)
+                Db = _db;
+            else
+            {
+                Db = new();
+
+                Property? prop = Db.Properties.Where(prop => prop.Id == _property.Id).FirstOrDefault();
+                if (prop != null)
+                {
+                    SelectedProperty = prop;
+                    SelectedLandlord = prop.Landlord;
+                }
+            }
 
             Db.Landlords.Load();
             AllLandlords = Db.Landlords.Local.ToObservableCollection();
-
-            Property? prop = Db.Properties.Where(prop => prop.Id == _property.Id).FirstOrDefault();
-            if (prop != null)
-            {
-                SelectedProperty = prop;
-                SelectedLandlord = prop.Landlord;
-            }
         }
 
         public void SaveProperty()

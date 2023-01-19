@@ -62,9 +62,8 @@ namespace WpfApp1.ViewModels
             AllCustomers.Add(newCustomer);
             Db.SaveChanges();
 
-            EditCustomer newWindow = new(newCustomer);
+            EditCustomer newWindow = new(newCustomer, Db);
             newWindow.Show();
-            OnRequestClose();
         }
 
         public void DeleteCustomer()
@@ -90,16 +89,15 @@ namespace WpfApp1.ViewModels
         {
             if (SelectedCustomer == null) return;
 
-            EditCustomer newWindow = new(SelectedCustomer);
+            EditCustomer newWindow = new(SelectedCustomer, Db);
             newWindow.Show();
-            OnRequestClose();
         }
 
         public void CreateReservation()
         {
             if (SelectedCustomer == null) return;
 
-            PickProperty newWindow = new(SelectedCustomer);
+            PickProperty newWindow = new(SelectedCustomer, Db);
             newWindow.Show();
         }
 

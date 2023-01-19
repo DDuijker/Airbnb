@@ -22,22 +22,28 @@ namespace WpfApp1.ViewModels
         public ICommand PickCommand { get; set; }
         public ICommand CancelCommand { get; set; }
 
-        public PickPropertyViewModel(Customer _customer)
+        public PickPropertyViewModel(Customer _customer, AirBnbContext? _db = null)
         {
             PickCommand = new RelayCommand(Pick);
             CancelCommand = new RelayCommand(Cancel);
 
             this.ChosenCustomer = _customer;
 
-            this.Db = new();
+            if (_db != null)
+                this.Db = _db;
+            else
+            {
+                this.Db = new();
+
+                Customer? customer = Db.Customers.Where(customer => customer.Id == _customer.Id).FirstOrDefault();
+                if (customer != null)
+                {
+                    this.ChosenCustomer = customer;
+                }
+            }
+
             Db.Properties.Load();
             AllProperties = Db.Properties.Local.ToObservableCollection();
-
-            Customer? customer = Db.Customers.Where(customer => customer.Id == _customer.Id).FirstOrDefault();
-            if (customer != null)
-            {
-                this.ChosenCustomer = customer;
-            }
         }
 
 
@@ -54,7 +60,7 @@ namespace WpfApp1.ViewModels
             reservation.Property = this.SelectedProperty;
             Db.SaveChanges();
 
-            EditReservation newWindow = new(reservation);
+            EditReservation newWindow = new(reservation, Db);
             newWindow.Show();
 
             OnRequestClose();

@@ -8,7 +8,7 @@ using WpfApp1.Models;
 
 namespace WpfApp1
 {
-    class AirBnbContext : DbContext
+    public class AirBnbContext : DbContext
     {
         public DbSet<Landlord> Landlords { get; set; }
         public DbSet<Property> Properties { get; set; }

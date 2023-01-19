@@ -21,11 +21,11 @@ namespace WpfApp1.Windows
     /// </summary>
     public partial class EditReservation : Window
     {
-        public EditReservation(Reservation _reservation)
+        public EditReservation(Reservation _reservation, AirBnbContext? _db = null)
         {
             InitializeComponent();
 
-            EditReservationViewModel Vm = new(_reservation);
+            EditReservationViewModel Vm = new(_reservation, _db);
             Vm.RequestClose += (s, e) => this.Close();
 
             DataContext = Vm;

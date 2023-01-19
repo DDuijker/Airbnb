@@ -42,9 +42,8 @@ namespace WpfApp1.ViewModels
             AllLandlords.Add(newLandlord);
             Db.SaveChanges();
 
-            EditLandlord newWindow = new(newLandlord);
+            EditLandlord newWindow = new(newLandlord, Db);
             newWindow.Show();
-            OnRequestClose();
         }
 
         public void DeleteLandlord()
@@ -57,16 +56,15 @@ namespace WpfApp1.ViewModels
         public void CreateProperty()
         {
             if (SelectedLandlord == null) return;
-            AddProperty newWindow = new(SelectedLandlord);
+            AddProperty newWindow = new(SelectedLandlord, Db);
             newWindow.Show();
         }
 
         public void EditLandlord()
         {
             if (SelectedLandlord == null) return;
-            EditLandlord newWindow = new(SelectedLandlord);
+            EditLandlord newWindow = new(SelectedLandlord, Db);
             newWindow.Show();
-            OnRequestClose();
         }
 
         public event EventHandler RequestClose;

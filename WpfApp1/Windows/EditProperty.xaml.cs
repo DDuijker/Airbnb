@@ -21,11 +21,11 @@ namespace WpfApp1.Windows
     /// </summary>
     public partial class EditProperty : Window
     {
-        public EditProperty(Property _property)
+        public EditProperty(Property _property, AirBnbContext? _db = null)
         {
             InitializeComponent();
 
-            EditPropertyViewModel Vm = new(_property);
+            EditPropertyViewModel Vm = new(_property, _db);
             Vm.RequestClose += (s, e) => this.Close();
 
             DataContext = Vm;

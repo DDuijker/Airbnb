@@ -23,24 +23,30 @@ namespace WpfApp1.ViewModels
 
         public ICommand SaveCommand { get; set; }
 
-        public EditReservationViewModel(Reservation _reservation)
+        public EditReservationViewModel(Reservation _reservation, AirBnbContext? _db = null)
         {
             SaveCommand = new RelayCommand(Save);
 
             Reservation = _reservation;
-            Db = new();
+
+            if (_db != null)
+                Db = _db;
+            else
+            {
+                Db = new();
+
+                Reservation? res = Db.Reservations.Where(_res => _res.Id == _reservation.Id).FirstOrDefault();
+                if (res != null)
+                {
+                    Reservation = res;
+                }
+            }
 
             Db.Properties.Load();
             AllProperties = Db.Properties.Local.ToObservableCollection();
 
             Db.Customers.Load();
             AllCustomers = Db.Customers.Local.ToObservableCollection();
-
-            Reservation? res = Db.Reservations.Where(_res => _res.Id == _reservation.Id).FirstOrDefault();
-            if (res != null)
-            {
-                Reservation = res;
-            }
 
             DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(Reservation.EpochArrival);
             PickedDate = dateTimeOffset.DateTime;

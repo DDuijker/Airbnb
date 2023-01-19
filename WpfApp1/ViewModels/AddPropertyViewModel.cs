@@ -19,9 +19,12 @@ namespace WpfApp1.ViewModels
         public ICommand SavePropertyCommand { get; set; }
         public ICommand CancelPropertyCommand { get; set; }
 
-        public AddPropertyViewModel(Landlord _landlord)
+        public AddPropertyViewModel(Landlord _landlord, AirBnbContext? _db = null)
         {
-            Db = new();
+            if (_db == null)
+                Db = new();
+            else
+                Db = _db;
 
             SavePropertyCommand = new RelayCommand(SaveProperty);
             CancelPropertyCommand = new RelayCommand(CancelPropery);

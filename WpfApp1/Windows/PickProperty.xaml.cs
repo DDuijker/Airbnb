@@ -21,11 +21,11 @@ namespace WpfApp1.Windows
     /// </summary>
     public partial class PickProperty : Window
     {
-        public PickProperty(Customer customer)
+        public PickProperty(Customer customer, AirBnbContext? _db = null)
         {
             InitializeComponent();
 
-            PickPropertyViewModel Vm = new(customer);
+            PickPropertyViewModel Vm = new(customer, _db);
             Vm.RequestClose += (s, e) => this.Close();
 
             DataContext = Vm;

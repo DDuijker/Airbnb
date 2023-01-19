@@ -21,11 +21,11 @@ namespace WpfApp1.Windows
     /// </summary>
     public partial class EditCustomer : Window
     {
-        public EditCustomer(Customer customer)
+        public EditCustomer(Customer customer, AirBnbContext? _db = null)
         {
             InitializeComponent();
 
-            EditCustomerViewModel Vm = new(customer);
+            EditCustomerViewModel Vm = new(customer, _db);
             Vm.RequestClose += (s, e) => this.Close();
 
             DataContext = Vm;

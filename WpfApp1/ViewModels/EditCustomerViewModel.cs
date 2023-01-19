@@ -17,18 +17,24 @@ namespace WpfApp1.ViewModels
         public ICommand SaveCommand { get; set; }
         public ICommand CancelCommand { get; set; }
 
-        public EditCustomerViewModel(Customer _customer)
+        public EditCustomerViewModel(Customer _customer, AirBnbContext? _db = null)
         {
             SaveCommand = new RelayCommand(Save);
             CancelCommand = new RelayCommand(Cancel);
 
             Customer = _customer;
-            Db = new();
 
-            Customer? customer = Db.Customers.Where(customer => customer.Id == _customer.Id).FirstOrDefault();
-            if (customer != null)
+            if (_db != null)
+                Db = _db;
+            else
             {
-                Customer = customer;
+                Db = new();
+
+                Customer? customer = Db.Customers.Where(customer => customer.Id == _customer.Id).FirstOrDefault();
+                if (customer != null)
+                {
+                    Customer = customer;
+                }
             }
         }
 

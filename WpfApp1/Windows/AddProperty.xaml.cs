@@ -21,11 +21,11 @@ namespace WpfApp1.Windows
     /// </summary>
     public partial class AddProperty : Window
     {
-        public AddProperty(Landlord SelectedLandlord)
+        public AddProperty(Landlord SelectedLandlord, AirBnbContext? _db = null)
         {
             InitializeComponent();
 
-            AddPropertyViewModel Vm = new(SelectedLandlord);
+            AddPropertyViewModel Vm = new(SelectedLandlord, _db);
             Vm.RequestClose += (s, e) => this.Close();
 
             DataContext = Vm;
