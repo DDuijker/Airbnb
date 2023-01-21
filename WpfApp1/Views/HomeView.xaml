@@ -25,5 +25,6 @@
         <Button Grid.Column="1" Grid.Row="0" x:Name="ShowPropertiesButton" Command="{Binding ShowPropertiesCommand}" Content="Properties" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="5,5,5,5" Width="130" Height="50" />
         <Button Grid.Column="0" Grid.Row="1" x:Name="ShowCustomersButton" Command="{Binding ShowCustomersCommand}" Content="Customers" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5,5,5,5" Width="130" Height="50" />
         <Button Grid.Column="1" Grid.Row="1" x:Name="ShowReservationsButton" Command="{Binding ShowReservationsCommand}" Content="Reservations" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,5,5,5" Width="130" Height="50" />
+        <Button Grid.Column="1" Grid.Row="1" x:Name="GenerateSeedingData" Command="{Binding GenerateSeedingCommand}" Content="Generate Seeding Data" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="5,5,5,5" Height="30" />
     </Grid>
 </UserControl>
