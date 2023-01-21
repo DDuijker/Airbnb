@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WpfApp1;
 
@@ -10,9 +11,11 @@ using WpfApp1;
 namespace WpfApp1.Migrations
 {
     [DbContext(typeof(AirBnbContext))]
-    partial class AirBnbContextModelSnapshot : ModelSnapshot
+    [Migration("20230121132015_Status enum")]
+    partial class Statusenum
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.1");
@@ -156,9 +159,6 @@ namespace WpfApp1.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("EpochArrival")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("EpochLeave")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("PropertyId")

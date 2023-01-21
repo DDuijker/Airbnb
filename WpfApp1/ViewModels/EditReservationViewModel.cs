@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WpfApp1.Models;
+using System.Windows;
 
 namespace WpfApp1.ViewModels
 {
@@ -22,6 +23,13 @@ namespace WpfApp1.ViewModels
         public DateTime PickedDate { get; set; }
 
         public ICommand SaveCommand { get; set; }
+        public Array ReservationStatusArray
+        {
+            get
+            {
+                return Enum.GetValues(typeof(ReservationStatus));
+            }
+        }
 
         public EditReservationViewModel(Reservation _reservation, AirBnbContext? _db = null)
         {
@@ -50,12 +58,40 @@ namespace WpfApp1.ViewModels
 
             DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(Reservation.EpochArrival);
             PickedDate = dateTimeOffset.DateTime;
+
+            
         }
 
         public void Save()
         {
             TimeSpan t = PickedDate - new DateTime(1970, 1, 1);
             Reservation.EpochArrival = (int)t.TotalSeconds;
+
+            if (Reservation.Status != ReservationStatus.Draft)
+            {
+                if (Reservation.AmountOfNights < 1)
+                {
+                    MessageBox.Show("Amount of nights has to be higher than 0 to be able to set status to something else than \"draft\"", "Error", MessageBoxButton.OK);
+                    return;
+                }
+
+                int reservationsCount = Db.Reservations
+                    .Where(_res => _res.Property.Id == Reservation.Property.Id)
+                    .Where(_res => _res.Status != ReservationStatus.Draft)
+                    .Where(_res => 
+                        (
+                            _res.EpochArrival >= Reservation.EpochArrival && _res.EpochArrival < Reservation.EpochLeave
+                        ) || (
+                            _res.EpochLeave > Reservation.EpochArrival && _res.EpochLeave  <= Reservation.EpochLeave
+                        )
+                    ).ToList().Count();
+
+                if (reservationsCount > 0)
+                {
+                    MessageBox.Show("There is already a reservation for this property on these dates", "Error", MessageBoxButton.OK);
+                    return;
+                }
+            }
 
             Db.SaveChanges();
         }

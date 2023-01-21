@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.Windows" xmlns:vms="clr-namespace:WpfApp1.ViewModels"
         mc:Ignorable="d"
-        Title="Landlords" Height="450" Width="370">
+        Title="Landlords" Height="450" Width="520">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -37,8 +38,12 @@
         <Label Grid.Column="1" Content="Country" VerticalAlignment="Top" Margin="0,270,0,0"/>
         <TextBox Grid.Column="1" x:Name="LandlordCountry" Text="{Binding SelectedLandlord.Country, Mode=OneWay}" VerticalAlignment="Top" Margin="0,290,05,0" IsReadOnly="True"/>
 
-        <Button Grid.Column="1" x:Name="CreatePropertyButton" Command="{Binding CreatePropertyCommand}" Content="Create Property" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,320,0,0" Width="130" Height="30" />
-        <Button Grid.Column="1" x:Name="EditLandlordButton" Command="{Binding EditLandlordCommand}" Content="Edit Landlord" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,360,0,0" Width="130" Height="30" />
+        <Button Grid.Column="1" x:Name="CreatePropertyButton" Command="{Binding CreatePropertyCommand}" Content="Create Property" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,320,0,0" Width="130" Height="30" />
+        <Button Grid.Column="1" x:Name="EditLandlordButton" Command="{Binding EditLandlordCommand}" Content="Edit Landlord" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,360,0,0" Width="130" Height="30" />
 
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,5,0" TextWrapping="Wrap" Text="Properties" VerticalAlignment="Top" Height="26" Width="130" FontSize="20"/>
+        <ListBox Grid.Column="2" x:Name="LandlordPropertiesListBox" SelectedItem="{Binding SelectedProperty}" ItemsSource="{Binding LandlordProperties}" DisplayMemberPath="Address" VerticalAlignment="Top" Margin="5,40,5,0" Width="130" Height="270"/>
+        <Button Grid.Column="2" x:Name="DeletePropertyButton" Command="{Binding DeletePropertyCommand}" Content="Delete Property" VerticalAlignment="Top" Margin="0,320,0,0" Width="130" Height="30" />
+        <Button Grid.Column="2" x:Name="EditPropertyButton" Command="{Binding EditPropertyCommand}" Content="Edit Prtoperty" VerticalAlignment="Top" Margin="0,360,0,0" Width="130" Height="30" />
     </Grid>
 </Window>

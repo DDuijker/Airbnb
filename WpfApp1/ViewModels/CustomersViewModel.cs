@@ -26,6 +26,8 @@ namespace WpfApp1.ViewModels
                 _selectedCustomer = value;
                 Notify("SelectedCustomer");
 
+                if (value == null) return;
+
                 var _customerReservation = Db.Reservations.Where(reservation => reservation.Customer.Id == value.Id);
                 CustomerReservations = ToObservableCollection(_customerReservation);
                 Notify("CustomerReservations");
@@ -41,6 +43,7 @@ namespace WpfApp1.ViewModels
         public ICommand EditCustomerCommand { get; set; }
         public ICommand CreateReservationCommand { get; set; }
         public ICommand DeleteReservationCommand { get; set; }
+        public ICommand EditReservationCommand { get; set; }
 
 
         public CustomersViewModel()
@@ -50,6 +53,7 @@ namespace WpfApp1.ViewModels
             EditCustomerCommand = new RelayCommand(EditCustomer);
             CreateReservationCommand = new RelayCommand(CreateReservation);
             DeleteReservationCommand = new RelayCommand(DeleteReservation);
+            EditReservationCommand = new RelayCommand(EditReservation);
 
             Db = new();
             Db.Customers.Load();
@@ -98,6 +102,15 @@ namespace WpfApp1.ViewModels
             if (SelectedCustomer == null) return;
 
             PickProperty newWindow = new(SelectedCustomer, Db);
+            newWindow.Show();
+        }
+
+        public void EditReservation()
+        {
+            if (SelectedReservation == null) return;
+            if (SelectedReservation.Customer.Id != SelectedCustomer.Id) return;
+
+            EditReservation newWindow = new(SelectedReservation, Db);
             newWindow.Show();
         }
 

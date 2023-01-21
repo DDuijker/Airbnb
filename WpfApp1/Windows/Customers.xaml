@@ -37,5 +37,6 @@
         <ListBox Grid.Column="2" x:Name="ReservationsListBox" SelectedItem="{Binding SelectedReservation}" ItemsSource="{Binding CustomerReservations}" DisplayMemberPath="DateString" VerticalAlignment="Top" Margin="0,40,0,0" Width="130" Height="270"/>
 
         <Button Grid.Column="2" x:Name="DeleteReservationButton" Command="{Binding DeleteReservationCommand}" Content="Delete Reservation" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,320,0,0" Width="130" Height="30" />
+        <Button Grid.Column="2" x:Name="EditReservationButton" Command="{Binding EditReservationCommand}" Content="Edit Reservation" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,360,0,0" Width="130" Height="30" />
     </Grid>
 </Window>

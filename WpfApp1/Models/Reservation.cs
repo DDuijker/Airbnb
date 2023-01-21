@@ -8,14 +8,26 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Models
 {
+    public enum ReservationStatus
+    {
+        Draft,
+        Created,
+        Pending,
+        Confirmed,
+        Cancelled,
+        Paid,
+        Waiting
+    }
+
     public class Reservation : INotifyPropertyChanged
     {
         private int _id;
         private Customer? _customer;
         private Property? _property;
-        private int _amountOfDays;
+        private int _amountOfNights;
         private int _epochArrival;
-        private string _status;
+        private int _epochLeave;
+        private ReservationStatus _status;
 
         public int Id
         {
@@ -47,13 +59,13 @@ namespace WpfApp1.Models
             }
         }
 
-        public int AmountOfDays
+        public int AmountOfNights
         {
-            get { return _amountOfDays; }
+            get { return _amountOfNights; }
             set
             {
-                _amountOfDays = value;
-                Notify("AmountOfDays");
+                _amountOfNights = value;
+                Notify("AmountOfNights");
                 Notify("EpochLeave");
             }
         }
@@ -64,13 +76,13 @@ namespace WpfApp1.Models
             set
             {
                 _epochArrival = value;
+                EpochLeave = EpochArrival + AmountOfNights * 86400;
                 Notify("EpochArrival");
                 Notify("DateString");
-                Notify("EpochLeave");
             }
         }
 
-        public string Status
+        public ReservationStatus Status
         {
             get { return _status; }
             set
@@ -94,16 +106,21 @@ namespace WpfApp1.Models
         {
             get
             {
-                return EpochArrival + AmountOfDays * 86400;
+                return _epochLeave;
+            }
+            set
+            {
+                _epochLeave = value;
+                Notify("EpochLeave");
             }
         }
 
         public Reservation(
-            int amountOfDays = 1,
+            int amountOfNights = 1,
             int epochArrival = 0,
-            string status = "created"
+            ReservationStatus status = ReservationStatus.Draft
         ) {
-            this.AmountOfDays = amountOfDays;
+            this.AmountOfNights = amountOfNights;
             this.EpochArrival = epochArrival;
             this.Status = status;
 
