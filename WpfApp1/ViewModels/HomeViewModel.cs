@@ -14,12 +14,14 @@ namespace WpfApp1.ViewModels
         public ICommand ShowLandlordsCommand { get; set; }
         public ICommand ShowPropertiesCommand { get; set; }
         public ICommand ShowCustomersCommand { get; set; }
+        public ICommand ShowReservationsCommand { get; set; }
 
         public HomeViewModel()
         {
             ShowLandlordsCommand = new RelayCommand(ShowLandlords);
             ShowPropertiesCommand = new RelayCommand(ShowProperties);
             ShowCustomersCommand = new RelayCommand(ShowCustomers);
+            ShowReservationsCommand = new RelayCommand(ShowReservations);
         }
 
         public void ShowLandlords()
@@ -37,6 +39,12 @@ namespace WpfApp1.ViewModels
         public void ShowCustomers()
         {
             Customers newWindow = new();
+            newWindow.Show();
+        }
+
+        public void ShowReservations()
+        {
+            Reservations newWindow = new();
             newWindow.Show();
         }
     }

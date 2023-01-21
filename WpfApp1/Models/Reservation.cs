@@ -36,6 +36,7 @@ namespace WpfApp1.Models
             {
                 _id = value;
                 Notify("Id");
+                Notify("Name");
             }
         }
 
@@ -79,6 +80,7 @@ namespace WpfApp1.Models
                 EpochLeave = EpochArrival + AmountOfNights * 86400;
                 Notify("EpochArrival");
                 Notify("DateString");
+                Notify("Name");
             }
         }
 
@@ -115,16 +117,24 @@ namespace WpfApp1.Models
             }
         }
 
+        public string Name
+        {
+            get
+            {
+                return Id.ToString() + " - " + DateString;
+            }
+        }
+
         public Reservation(
-            int amountOfNights = 1,
-            int epochArrival = 0,
+            int amountOfNights = 0,
+            int epochArrival = -1,
             ReservationStatus status = ReservationStatus.Draft
         ) {
             this.AmountOfNights = amountOfNights;
             this.EpochArrival = epochArrival;
             this.Status = status;
 
-            if (epochArrival == 0)
+            if (epochArrival < 0)
             {
                 TimeSpan t = DateTime.UtcNow.Date - new DateTime(1970, 1, 1);
                 this.EpochArrival = (int)t.TotalSeconds;

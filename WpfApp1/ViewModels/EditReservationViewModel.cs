@@ -67,6 +67,18 @@ namespace WpfApp1.ViewModels
             TimeSpan t = PickedDate - new DateTime(1970, 1, 1);
             Reservation.EpochArrival = (int)t.TotalSeconds;
 
+            if (Reservation.Property == null)
+            {
+                MessageBox.Show("You need to select a property before you can save this reservation", "Error", MessageBoxButton.OK);
+                return;
+            }
+
+            if (Reservation.Customer == null)
+            {
+                MessageBox.Show("You need to select a customer before you can save this reservation", "Error", MessageBoxButton.OK);
+                return;
+            }
+
             // Ik weet dat in je in de WPF applicatie alles moet kunnen aanpassen, maar ik vind het toch echt wel fundamenteel dat je 1 property niet meerdere keren kunt reserveren voor dezelfde data
             if (Reservation.Status != ReservationStatus.Draft && Reservation.Status != ReservationStatus.Cancelled)
             {
