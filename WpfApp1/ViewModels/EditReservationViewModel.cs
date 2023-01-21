@@ -67,6 +67,7 @@ namespace WpfApp1.ViewModels
             TimeSpan t = PickedDate - new DateTime(1970, 1, 1);
             Reservation.EpochArrival = (int)t.TotalSeconds;
 
+            // Ik weet dat in je in de WPF applicatie alles moet kunnen aanpassen, maar ik vind het toch echt wel fundamenteel dat je 1 property niet meerdere keren kunt reserveren voor dezelfde data
             if (Reservation.Status != ReservationStatus.Draft && Reservation.Status != ReservationStatus.Cancelled)
             {
                 if (Reservation.AmountOfNights < 1)
