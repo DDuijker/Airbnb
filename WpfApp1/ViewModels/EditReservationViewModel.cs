@@ -85,7 +85,7 @@ namespace WpfApp1.ViewModels
                         ) || (
                             _res.EpochLeave > Reservation.EpochArrival && _res.EpochLeave  <= Reservation.EpochLeave
                         )
-                    ).ToList().Count();
+                    ).Count(); 
 
                 if (reservationsCount > 0)
                 {
