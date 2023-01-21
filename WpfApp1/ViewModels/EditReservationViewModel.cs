@@ -67,7 +67,7 @@ namespace WpfApp1.ViewModels
             TimeSpan t = PickedDate - new DateTime(1970, 1, 1);
             Reservation.EpochArrival = (int)t.TotalSeconds;
 
-            if (Reservation.Status != ReservationStatus.Draft)
+            if (Reservation.Status != ReservationStatus.Draft && Reservation.Status != ReservationStatus.Cancelled)
             {
                 if (Reservation.AmountOfNights < 1)
                 {
@@ -77,7 +77,7 @@ namespace WpfApp1.ViewModels
 
                 int reservationsCount = Db.Reservations
                     .Where(_res => _res.Property.Id == Reservation.Property.Id)
-                    .Where(_res => _res.Status != ReservationStatus.Draft)
+                    .Where(_res => _res.Status != ReservationStatus.Draft && _res.Status != ReservationStatus.Cancelled)
                     .Where(_res => 
                         (
                             _res.EpochArrival >= Reservation.EpochArrival && _res.EpochArrival < Reservation.EpochLeave
