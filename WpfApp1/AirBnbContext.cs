@@ -29,7 +29,7 @@ namespace WpfApp1
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite($"Data Source=database.db"); // Use {DbPath} in production
+            optionsBuilder.UseSqlite($"Data Source=database.db");
             base.OnConfiguring(optionsBuilder);
         }
     }
