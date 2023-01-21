@@ -107,6 +107,7 @@ namespace WpfApp1.ViewModels
             }
 
             Db.SaveChanges();
+            OnRequestClose();
         }
 
         public event EventHandler RequestClose;
