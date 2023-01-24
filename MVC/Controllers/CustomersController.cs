@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
+using MVC.Data;
+using MVC.ViewModels;
 namespace MVC.Controllers
 {
     public class CustomersController : Controller
@@ -8,7 +9,10 @@ namespace MVC.Controllers
         // GET: CustomersController
         public ActionResult Index()
         {
-            return View();
+            CustomersView vm = new CustomersView();
+            AirBnbContext db = new AirBnbContext();
+            vm.Load(db);
+            return View(vm);
         }
 
         // GET: CustomersController/Details/5
