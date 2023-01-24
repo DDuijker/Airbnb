@@ -2,7 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="heroDiv">
+<div class="wrapper">
+      <video class="clipped-video" muted loop autoplay>
+        <source src="~/media/skyline2.mov" />
+      </video>
+      <svg height="100%" width="100%">
+        <clipPath id="text-overlay" width="100%" height="100%">
+          <text id="title" x="0" y="0" dy="1.58em">AirBnB</text>
+        </clipPath>
+      </svg>
+    <h1 class="subHero">Manegement Site!</h1>
+    </div>
 </div>
+<button id="overview" class="overview">Overview</button>
+
+<style>
+    body {
+        overflow-y: hidden;
+    }
+</style>
+ <script src="~/js/index.js" asp-append-version="true"></script>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\aaron\dev\school\Airbnb\WpfApp\obj\Debug\net6.0-windows\
+C:\Users\domik\source\repos\Airbnb2\WpfApp\obj\Debug\net6.0-windows\
 AirBnB
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\aaron\dev\school\Airbnb\WpfApp\App.xaml
+C:\Users\domik\source\repos\Airbnb2\WpfApp\App.xaml
 32089216873
 
 111525966415
-235-1498856348
+194-200944676
 MainWindow.xaml;Views\LandlordView.xaml;Views\PropertyView.xaml;
 
-False
+True
 

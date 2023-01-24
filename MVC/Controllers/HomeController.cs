@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVC.Models;
 using System.Diagnostics;
+using MVC.Data;
+using System.Collections.ObjectModel;
 
 namespace MVC.Controllers
 {
@@ -12,9 +14,23 @@ namespace MVC.Controllers
         {
             _logger = logger;
         }
-
+        private int _id;
+        private string _firstName;
+        private string _lastName;
+        private string _email;
+        private string _phoneNumber;
+        private ObservableCollection<Reservation> _reservations;
         public IActionResult Index()
         {
+        /*    Customer customer = new Customer();
+            customer.FirstName = "Hi";
+            customer.LastName = "bye";
+            using( var db = new AirBnbContext())
+            {
+            db.Add(customer);
+            db.SaveChanges();
+            }*/
+            
             return View();
         }
 

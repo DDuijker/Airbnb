@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bin",
+    "\\MVC",
+    "\\WpfApp1"
   ],
+  "SelectedNode": "\\MVC\\MVC.sln",
   "PreviewInSolutionExplorer": false
 }
