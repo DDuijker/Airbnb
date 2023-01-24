@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "buildcss:dev": "npx tailwind build -i ./wwwroot/css/styles.css -o ./wwwroot/css/site.css",
+    "buildcss:release": "postcss ./Styles/app.css -o ./wwwroot/css/app.css"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.0.6",
+    "npx": "^10.2.2",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss-textshadow": "2.1.3"
+  }
+}
