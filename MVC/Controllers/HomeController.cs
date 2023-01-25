@@ -3,6 +3,7 @@ using MVC.Models;
 using System.Diagnostics;
 using MVC.Data;
 using System.Collections.ObjectModel;
+using MVC.ViewModels;
 
 namespace MVC.Controllers
 {
@@ -37,6 +38,14 @@ namespace MVC.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult Overview()
+        {
+            OverviewView vm = new OverviewView();
+            AirBnbContext db = new AirBnbContext();
+            vm.Load(db);
+            return View(vm);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

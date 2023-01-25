@@ -19,6 +19,8 @@ namespace WpfApp1.ViewModels
         public ICommand ShowReservationsCommand { get; set; }
         public ICommand GenerateSeedingCommand { get; set; }
 
+         AirBnbContext db { get; set; }
+
         public HomeViewModel()
         {
             ShowLandlordsCommand = new RelayCommand(ShowLandlords);
@@ -54,7 +56,7 @@ namespace WpfApp1.ViewModels
 
         private void GenerateSeeding()
         {
-            AirBnbContext db = new();
+             AirBnbContext db = new();
 
             if (db.Customers.Any() || db.Reservations.Any() || db.Landlords.Any() || db.Properties.Any())
             {
@@ -86,7 +88,7 @@ namespace WpfApp1.ViewModels
                 NumberOfBathrooms = 1,
                 Title = "Neat appartement",
                 Type = "Appartement",
-                Description = "VERY COOL APPARTEMENT!!!"
+                Description = "Large seaside appartment with nice views on the water, The appartment has 4 rooms with 2 beds. and 1 bathroom"
             };
             db.Properties.Add(newProperty);
             db.SaveChanges();

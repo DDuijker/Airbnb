@@ -11,7 +11,8 @@ namespace MVC.ViewModels
         public void Load(AirBnbContext db, int? id= null)
         {
             CustomerAmount = db.Customers.Count();
-            Customers = db.Customers.Where(c => c.Id == id).ToList();
+            /*Customers = db.Customers.Local.ToList();*/
+            Customers = db.Customers.ToList();
             Customer = db.Customers.Where(c => c.FirstName == "Hi").FirstOrDefault<Customer>();
 
 

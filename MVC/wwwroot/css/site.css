@@ -1,7 +1,9 @@
 /*
 ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
 */
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -565,7 +567,7 @@ body {
 }
 
 .subHero {
-  color: #3916A5;
+  color: #ff5c5c;
   font-family: 'Passion One', cursive;
   font-size: 4vw;
   margin-top: -15vh;
@@ -583,7 +585,7 @@ body {
 .heroDiv {
   pointer-events: none;
   margin-top: 10vh;
-  left: 5vw;
+  left: 8vw;
   z-index: 15;
   position: relative;
   width: 100vw;
@@ -596,8 +598,8 @@ body {
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
   opacity: 0.8;
-  background: rgb(167,0,255);
-  background: linear-gradient(180deg, rgba(167,0,255,1) 0%, rgba(57,22,165,1) 94%, rgba(57,22,165,1) 98%);
+  background: rgb(255,92,92);
+  background: linear-gradient(90deg, rgba(255,92,92,1) 0%, rgba(255,68,68,1) 93%, rgba(255,55,55,1) 98%);
   border-radius: 50vw;
   box-shadow: 16px 16px 16px rgba(0,0,0,0.2);
   transition: 0.08s;
@@ -643,8 +645,8 @@ text {
 }
 
 .overview {
-  background: rgb(167,0,255);
-  background: linear-gradient(90deg, rgba(167,0,255,1) 0%, rgba(57,22,165,1) 94%, rgba(57,22,165,1) 98%);
+  background: rgb(255,92,92);
+  background: linear-gradient(90deg, rgba(255,92,92,1) 0%, rgba(255,68,68,1) 93%, rgba(255,55,55,1) 98%);
   width: 15vw;
   border: none;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
@@ -655,7 +657,7 @@ text {
   opacity: 0.9;
   left: 11.5vw;
   position: absolute;
-  bottom: 45vh;
+  bottom: 35vh;
   color: white;
   font-family: 'Passion One', cursive;
   font-size: 2vw;
