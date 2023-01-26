@@ -1,0 +1,39 @@
+﻿@model MVC.ViewModels.ReservationView 
+<div class="container mx-auto  ">
+  <div class="overflow-x-auto relative shadow-md sm:rounded-lg w-full sm:w-3/4 mx-auto my-6">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <caption class="p-5 text-lg text-white font-semibold text-left  bg-red-400 dark:text-white dark:bg-gray-800"> @Html.DisplayFor(model => model.Reservation.Property.Address) @* <a href="#" class="float-right font-medium text-blue-600 dark:text-blue-500">+</a>*@
+        <!-- <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of users.</p> -->
+      </caption>
+      <thead class="text-xs text-gray-700 uppercase bg-red-400   dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th scope="col" class="py-3 px-6"> @Html.DisplayNameFor(model => model.Reservation.Customer.FirstName) </th>
+          <th scope="col" class="py-3 px-6"> @Html.DisplayNameFor(model => model.Reservation.Property.Address) </th>
+          <th scope="col" class="py-3 px-6"> @Html.DisplayNameFor(model => model.Reservation.EpochArrival) </th>
+          <th scope="col" class="py-3 px-6"> @Html.DisplayNameFor(model => model.Reservation.AmountOfNights) </th>
+          <th scope="col" class="py-3 px-6"> Details </th>
+        </tr>
+      </thead>
+      <tbody> 
+         @foreach (var item in Model.Reservations) { 
+            
+            //from start epoch time 
+            DateTime start = new DateTime(1970, 1, 1, 0, 0, 0, 0); 
+            start = start.AddSeconds(item.EpochArrival); 
+            string DateTime = start.ToString("yyyy-MM-dd"); 
+
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"> @Html.DisplayFor(modelItem => item.Customer.FirstName)</th>
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"> @Html.DisplayFor(modelItem => item.Property.Address) </th>
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"> @DateTime </th>
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"> @Html.DisplayFor(modelItem => item.AmountOfNights) </th>
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <a href="/Reservations/Details/@item.Id" class="text-white bg-red-400 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Details</a>
+          </th>
+        </tr> 
+         } 
+      </tbody>
+    </table>
+    
+  </div>
+  <a asp-area="" asp-controller="Home" asp-action="Index" class="text-white bg-red-400 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Go back to home</a>

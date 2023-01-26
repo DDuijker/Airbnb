@@ -1,42 +1,26 @@
-﻿@model MVC.Models.Customer
-
-@{
-    ViewData["Title"] = "Details";
-}
-
-<h1>Details</h1>
-
-<div>
-    <h4>Customer</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+﻿@model MVC.ViewModels.CustomersView 
+<div class="container mx-auto">
+  <div class="overflow-x-auto relative shadow-md sm:rounded-lg w-full sm:w-3/4 mx-auto my-6">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <caption class="p-5 text-lg text-white font-semibold text-left  bg-red-400 dark:text-white dark:bg-gray-800"> @Html.DisplayFor(model => model.Customer.FirstName) 
+      </caption>
+      <thead class="text-xs text-gray-700 uppercase bg-red-400   dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th scope="col" class="py-3 px-6"> @Html.DisplayNameFor(model => model.Customer.FirstName) </th>
+          <th scope="col" class="py-3 px-6"> @Html.DisplayNameFor(model => model.Customer.LastName) </th>
+          <th scope="col" class="py-3 px-6"> @Html.DisplayNameFor(model => model.Customer.Email) </th>
+          <th scope="col" class="py-3 px-6"> @Html.DisplayNameFor(model => model.Customer.PhoneNumber) </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"> @Html.DisplayFor(model => model.Customer.FirstName)
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"> @Html.DisplayFor(model => model.Customer.LastName) </th>
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"> @Html.DisplayFor(model => model.Customer.Email) </th>
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"> @Html.DisplayFor(model => model.Customer.PhoneNumber) </th>
+        </tr>
+      </tbody>
+    </table>
+    </table>
+  </div>
+  <a asp-area="" asp-controller="Customers" asp-action="Index" class="text-white bg-red-400 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Go back</a>

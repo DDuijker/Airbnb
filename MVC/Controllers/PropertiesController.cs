@@ -5,110 +5,115 @@ using MVC.ViewModels;
 
 namespace MVC.Controllers
 {
-    public class PropertiesController : Controller
-    {
-        // GET: PropertiesController
-        public ActionResult Index()
-        {
-            return View();
-        }
+   public class PropertiesController : Controller
+   {
+      // GET: PropertiesController
+      public ActionResult Index()
+      {
+         return View();
+      }
 
-        // GET: PropertiesController/Details/5
-        public ActionResult Details(int id)
-        {
+      // GET: PropertiesController/Details/5
+      public ActionResult Details(int id)
+      {
+         PropertyDetailsView vm = new PropertyDetailsView();
+         AirBnbContext db = new AirBnbContext();
+         vm.Load(db, id);
+         return View(vm);
+      }
+      public IActionResult Overview(string? id, string? category)
+      {
+         OverviewView vm = new OverviewView();
+         AirBnbContext db = new AirBnbContext();
+         vm.Load(db);
+
+         vm.Sort(attribute: category, metric: id);
+
+         return View(vm);
+      }
+
+
+      // GET: PropertiesController/Create
+      public ActionResult Create()
+      {
+         return View();
+      }
+
+      // POST: PropertiesController/Create
+      [HttpPost]
+      [ValidateAntiForgeryToken]
+      public ActionResult Create(IFormCollection collection)
+      {
+
+         try
+         {
+            return RedirectToAction(nameof(Index));
+         }
+         catch
+         {
+            return View();
+         }
+      }
+      //POST PropertiesController/createReservation
+      [HttpPost]
+      [ValidateAntiForgeryToken]
+      public ActionResult createReservation(IFormCollection collection)
+      {
+         try
+         {
+
             PropertyDetailsView vm = new PropertyDetailsView();
             AirBnbContext db = new AirBnbContext();
-            vm.Load(db, id);
-            return View(vm);
-        }
-
-        public ActionResult createReservation()
-        {
-           
+            vm.Store(db, collection);
+            int lastReservationId = vm.Reservation.Id;
+            return Redirect("/Reservations/Details/" + lastReservationId);
+         }
+         catch
+         {
             return View();
-        }
+         }
+      }
 
-        // GET: PropertiesController/Create
-        public ActionResult Create()
-        {
+      // GET: PropertiesController/Edit/5
+      public ActionResult Edit(int id)
+      {
+         return View();
+      }
+
+      // POST: PropertiesController/Edit/5
+      [HttpPost]
+      [ValidateAntiForgeryToken]
+      public ActionResult Edit(int id, IFormCollection collection)
+      {
+         try
+         {
+            return RedirectToAction(nameof(Index));
+         }
+         catch
+         {
             return View();
-        }
+         }
+      }
 
-        // POST: PropertiesController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-           
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-        //POST PropertiesController/createReservation
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult createReservation(IFormCollection collection)
-        {
-            try
-            {
-             
-                PropertyDetailsView vm = new PropertyDetailsView();
-                AirBnbContext db = new AirBnbContext();
-                vm.Store(db, collection);
-                int lastReservationId = vm.Reservation.Id;
-                return Redirect("/Reservations/Details/" + lastReservationId);
-            }
-            catch
-            {
-                return View();
-            }
-        }
+      // GET: PropertiesController/Delete/5
+      public ActionResult Delete(int id)
+      {
+         return View();
+      }
 
-        // GET: PropertiesController/Edit/5
-        public ActionResult Edit(int id)
-        {
+      // POST: PropertiesController/Delete/5
+      [HttpPost]
+      [ValidateAntiForgeryToken]
+      public ActionResult Delete(int id, IFormCollection collection)
+      {
+         try
+         {
+            return RedirectToAction(nameof(Index));
+         }
+         catch
+         {
             return View();
-        }
-
-        // POST: PropertiesController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: PropertiesController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: PropertiesController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-    }
+         }
+      }
+   }
 }

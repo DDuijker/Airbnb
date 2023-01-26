@@ -1,127 +1,31 @@
-﻿@model MVC.ViewModels.CustomersView
-
-@{
-    ViewData["Title"] = "Index";
-}
-<div class="container mx-auto  ">
-
-     
-   <div class="overflow-x-auto relative shadow-md sm:rounded-lg w-full sm:w-3/4 mx-auto my-6">
-
- 
-    @*<thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Customer.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customer.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customer.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customer.PhoneNumber)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        
-        <tr>
-            <td>
-               @Model.Customer.FirstName
-            </td>
-            <td>
-                @Model.Customer.LastName
-            </td>
-            <td>
-                @Model.Customer.Email
-            </td>
-            <td>
-                @Model.Customer.PhoneNumber
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@Model.Customer.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@Model.Customer.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@Model.Customer.Id">Delete</a>
-            </td>
-        </tr>
-       
-@foreach (var item in Model.Customers) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>*@
+﻿@model MVC.ViewModels.CustomersView 
+@{ ViewData["Title"] = "Index"; } 
+<div class="container mx-auto">
+  <div class="overflow-x-auto relative shadow-md sm:rounded-lg w-full sm:w-3/4 mx-auto my-6">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <caption class="p-5 text-lg font-semibold text-left text-white bg-red-400 dark:text-white dark:bg-gray-800">
-                Customers
-     
-              @*  <a href="#" class="float-right font-medium text-blue-600 dark:text-blue-500">+</a>*@
-       
-                <!-- <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of users.</p> -->
-            </caption>
-            <thead class="text-xs text-gray-700 uppercase bg-red-400   dark:bg-gray-700 dark:text-gray-400">
-                <tr>
-                    <th scope="col" class="py-3 px-6">
-                        First name
-                    </th>
-                    <th scope="col" class="py-3 px-6">
-                        Last name
-                    </th>
-                    <th scope="col" class="py-3 px-6">
-                        Email
-                    </th>
-
-                    <th scope="col" class="py-3 px-6">
-                        Phonenumber
-                    </th>
-                   
-                   
-                </tr>
-
-            </thead>
-            <tbody>
-               @foreach (var item in Model.Customers) {
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            @Html.DisplayFor(modelItem => item.FirstName)
-                        </th>
-
-                        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            @Html.DisplayFor(modelItem => item.LastName)
-                        </th>
-
-                        <td class="py-4 px-6">
-                            <span class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-900">
-                                @Html.DisplayFor(modelItem => item.Email)
-                            </span>
-                        </td>
-                        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            @Html.DisplayFor(modelItem => item.PhoneNumber)
-                        </th>
-                       
-                    </tr>
-                }
-            </tbody>
-        </table>
-</table>
-</div>
+      <caption class="p-5 text-lg font-semibold text-left text-white bg-red-400 dark:text-white dark:bg-gray-800"> Customers </caption>
+      <thead class="text-xs text-gray-700 uppercase bg-red-400   dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+           <th scope="col" class="py-3 px-6"> @Html.DisplayNameFor(model => model.Customer.FirstName) </th>
+          <th scope="col" class="py-3 px-6"> @Html.DisplayNameFor(model => model.Customer.LastName) </th>
+          <th scope="col" class="py-3 px-6"> @Html.DisplayNameFor(model => model.Customer.Email) </th>
+          <th scope="col" class="py-3 px-6"> @Html.DisplayNameFor(model => model.Customer.PhoneNumber) </th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody> 
+        @foreach (var item in Model.Customers) { <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"> @Html.DisplayFor(modelItem => item.FirstName) </th>
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"> @Html.DisplayFor(modelItem => item.LastName) </th>
+          <td class="py-4 px-6">
+            <span class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-900"> @Html.DisplayFor(modelItem => item.Email) </span>
+          </td>
+          <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"> @Html.DisplayFor(modelItem => item.PhoneNumber) </th>
+             <th> <a asp-area="" asp-controller="Customers" asp-action="Details" asp-route-id="@item.Id" class="text-white bg-red-400 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Details</a></th>
+        </tr> 
+        } 
+        </tbody>
+    </table>
+    </table>
+  </div>
 </div>
