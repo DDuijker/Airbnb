@@ -15,7 +15,7 @@
 
 <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
   <div class="container flex flex-wrap items-center justify-between mx-auto">
-    <a href="https://flowbite.com/" class="flex items-center">
+    <a href="/" class="flex items-center">
         <img src="~/media/airbnb.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
         
     </a>
@@ -34,12 +34,7 @@
         <li>
           <a asp-area="" asp-controller="Customers" asp-action="Index" class="block py-2 pl-3 pr-4 text-gray-700 navlinkitem  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Customers</a>
         </li>
-        <li>
-          <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent navlinkitem  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent navlinkitem  md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-        </li>
+       
       </ul>
     </div>
   </div>
@@ -63,7 +58,6 @@
         if(windowLocation === ""){
             windowLocation = "Home"
         }
-        console.log(windowLocation)
         let navlinks = document.getElementsByClassName('navlinkitem')
         console.log(navlinks)
         for (const navlink of navlinks){
@@ -76,28 +70,3 @@
 </body>
 </html>
 
-
-
-
- @*    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
-            <div class="container-fluid">
-                <a class="title" id="title" asp-area="" asp-controller="Home" asp-action="Index">AirBnB</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="navLink" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="navLink" asp-area="" asp-controller="Properties" asp-action="Index">Properties</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="navLink" asp-area="" asp-controller="Landlords" asp-action="Index">Landlords</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>*@

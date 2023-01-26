@@ -40,11 +40,14 @@ namespace MVC.Controllers
             return View();
         }
 
-        public IActionResult Overview()
+        public IActionResult Overview(string? id, string? category)
         {
             OverviewView vm = new OverviewView();
             AirBnbContext db = new AirBnbContext();
             vm.Load(db);
+          
+                vm.Sort(attribute: category, metric: id);
+            
             return View(vm);
         }
 

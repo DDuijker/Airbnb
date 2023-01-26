@@ -64,6 +64,7 @@ namespace WpfApp1.ViewModels
 
         public void Save()
         {
+
             TimeSpan t = PickedDate - new DateTime(1970, 1, 1);
             Reservation.EpochArrival = (int)t.TotalSeconds;
 

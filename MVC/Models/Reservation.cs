@@ -59,7 +59,7 @@ namespace MVC.Models
                 Notify("Property");
             }
         }
-
+        [DisplayName("Amount of nights")]
         public int AmountOfNights
         {
             get { return _amountOfNights; }
@@ -70,7 +70,7 @@ namespace MVC.Models
                 Notify("EpochLeave");
             }
         }
-
+        [DisplayName("Date of arrival")]
         public int EpochArrival
         {
             get { return _epochArrival; }

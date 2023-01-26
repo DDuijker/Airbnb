@@ -71,7 +71,7 @@
 }
     </tbody>*@
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-red-400 dark:text-white dark:bg-gray-800">
+            <caption class="p-5 text-lg font-semibold text-left text-white bg-red-400 dark:text-white dark:bg-gray-800">
                 Customers
      
               @*  <a href="#" class="float-right font-medium text-blue-600 dark:text-blue-500">+</a>*@
@@ -93,12 +93,8 @@
                     <th scope="col" class="py-3 px-6">
                         Phonenumber
                     </th>
-                    <th scope="col" class="py-3 px-6">
-                        Edit
-                    </th>
-                    <th scope="col" class="py-3 px-6">
-                        <span class="sr-only">Edit</span>
-                    </th>
+                   
+                   
                 </tr>
 
             </thead>
@@ -114,16 +110,14 @@
                         </th>
 
                         <td class="py-4 px-6">
-                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-900">
+                            <span class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-900">
                                 @Html.DisplayFor(modelItem => item.Email)
                             </span>
                         </td>
                         <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             @Html.DisplayFor(modelItem => item.PhoneNumber)
                         </th>
-                        <td class="py-4 px-6 text-right">
-                                <a href="{{ route('posts.edit', $post->id) }}" class="mx-1 font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a
-                        </td>
+                       
                     </tr>
                 }
             </tbody>
